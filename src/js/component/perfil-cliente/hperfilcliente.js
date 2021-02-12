@@ -4,6 +4,7 @@ import { MisdatosCliente } from "./misdatoscliente";
 import { SolicitudCliente } from "./solicitudescliente";
 import { AgentePreferido } from "./agentepreferidocliente";
 import { MsjCliente } from "./msjcliente";
+import Reserva from "../../views/reserva";
 
 export const HperfilCliente = () => {
 	return (
@@ -78,6 +79,18 @@ export const HperfilCliente = () => {
 												Msg Directos Agentes
 											</a>
 										</li>
+										<li className="nav-item">
+											<a
+												className="nav-link"
+												id="profile-reserva-tab"
+												data-toggle="tab"
+												href="#profile-reserva"
+												role="tab"
+												aria-controls="profile-reserva"
+												aria-selected="false">
+												Agenda servicio
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -114,6 +127,15 @@ export const HperfilCliente = () => {
 					<div className="tab-pane fade" id="profile-msg" role="tabpanel" aria-labelledby="profile-msg-tab">
 						<div className="col-12" />
 						<MsjCliente />
+					</div>
+					<div
+						className="tab-pane fade"
+						id="profile-reserva"
+						role="tabpanel"
+						aria-labelledby="profile-reserva-tab">
+						<div className="col-12">
+							<Reserva />
+						</div>
 					</div>
 				</div>
 			</div>
