@@ -37,7 +37,7 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						{/* 	<Route exact path="/">
+						 	<Route exact path="/">
 							<Home />
 						</Route>
 						<Route exact path="/ayuda">
@@ -54,18 +54,18 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/admin">
 							<Admin />
-						</Route> */}
-						<Route>
-							<PerfilTrabajor />
+						</Route> 
+						<Route exact path="/trabajador">
+							<PerfilTrabajor  />
 						</Route>
 
-						<Route>
-							<PerfilCliente />
+						<Route exact path="/cliente">
+							<PerfilCliente  />
 						</Route>
 						<Route>
 
 							<Informe />
-						</Route> */}
+						</Route> 
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
