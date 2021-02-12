@@ -13,15 +13,13 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
-import {Reserva} from "./views/reserva";
-import {InicioLabores} from "./views/inicio de labores";
+import { Reserva } from "./views/reserva";
+import { InicioLabores } from "./views/inicio de labores";
 
 import { PerfilCliente } from "./views/perfilCliente";
 import { PerfilTrabajor } from "./views/perfilTrabajador";
-import { Ayuda } from "./views/ayuda";
+import Ayuda from "./views/ayuda";
 import { Informe } from "./views/informe";
-
-
 
 //create your first component
 const Layout = () => {
@@ -37,6 +35,9 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
+						</Route>
+						<Route exact path="/ayuda">
+							<Ayuda />
 						</Route>
 						<Route exact path="/pricing">
 							<Pricing />
@@ -62,7 +63,6 @@ const Layout = () => {
 					</Switch>
 					<Footer />
 				</ScrollToTop>
-
 			</BrowserRouter>
 		</div>
 	);
