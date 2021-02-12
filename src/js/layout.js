@@ -14,7 +14,10 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
 import { Reserva } from "./views/reserva";
+
+
 import { InicioLabores } from "./views/inicio de labores";
+
 
 import { PerfilCliente } from "./views/perfilCliente";
 import { PerfilTrabajor } from "./views/perfilTrabajador";
@@ -33,7 +36,7 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/">
+						{/* 	<Route exact path="/">
 							<Home />
 						</Route>
 						<Route exact path="/ayuda">
@@ -50,13 +53,13 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/admin">
 							<Admin />
-						</Route>
+						</Route> */}
 						<Route>
 							<PerfilTrabajor />
 						</Route>
-						<Route>
+						{/* 						<Route>
 							<Informe />
-						</Route>
+						</Route> */}
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
