@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 
 export const Footer = () => (
-
 	<footer
 		className="text-white ml-0 bg-dark"
 		/* style={{ position: "fixed", padding: "10px 10px 0px 10px", bottom: "0", width: "100%" }} */

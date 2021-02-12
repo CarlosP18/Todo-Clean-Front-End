@@ -14,9 +14,8 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
 import { Reserva } from "./views/reserva";
-
-
 import { InicioLabores } from "./views/inicio de labores";
+
 
 
 import { PerfilCliente } from "./views/perfilCliente";
@@ -31,6 +30,7 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
+
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
@@ -68,6 +68,7 @@ const Layout = () => {
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
+
 	);
 };
 

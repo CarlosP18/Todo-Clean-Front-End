@@ -6,7 +6,7 @@ import { strategy } from "webpack-merge";
 export const Navbar = () => {
 	return (
 		<>
-			<nav className="navbar fixed-top navbar-dark bg-dark">
+			<nav className="navbar fixed-top  navbar-dark bg-dark">
 				<Link className="navbar-brand ml-lg-5 ml-3 " to="/">
 					<img src={logo} style={{ height: "3rem" }} alt="" loading="lazy" />
 				</Link>
