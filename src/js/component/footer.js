@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 
 export const Footer = () => (
-	<footer
-		className="text-white ml-0 bg-dark"
-		style={{ position: "fixed", padding: "10px 10px 0px 10px", bottom: "0", width: "100%" }}>
+	<footer className="text-white p-0 m-0 w-100 bg-dark" style={{}}>
 		<div className="row">
 			<div className="col-md-3 ml-5">
 				<Link className="navbar-brand float-left " to="/">

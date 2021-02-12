@@ -67,7 +67,7 @@
 	align-items: center;
 	margin-bottom: 24px;
   }
-  .calendar{}
+  
   
   .calendar__week,
   .calendar__header {
@@ -94,15 +94,7 @@
   
   /* COSMETIC STYLING */
   
-  :root {
-	--red: #3bc5aa;
-  }
-  
-  body {
-	font-family: Montserrat;
-	font-weight: 100;
-	color: #A8B2B9;
-  }
+
   
   sidebar {
 	background-color: white;
