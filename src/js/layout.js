@@ -3,8 +3,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+import { Pricing } from "./views/pricing";
+import { Signup } from "./views/signup";
+import { Signin } from "./views/signin";
+import { Calendar } from "./component/calendar";
+import { Admin } from "./views/admin";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -15,8 +18,8 @@ import InicioLabores from "./views/inicio de labores";
 
 import { PerfilCliente } from "./views/perfilCliente";
 import { PerfilTrabajor } from "./views/perfilTrabajador";
-import {Ayuda} from "./views/ayuda";
-import {Informe} from "./views/informe";
+import { Ayuda } from "./views/ayuda";
+import { Informe } from "./views/informe";
 
 
 
@@ -29,6 +32,34 @@ const Layout = () => {
 	return (
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
+				<ScrollToTop>
+					<Navbar />
+					<Switch>
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route exact path="/pricing">
+							<Pricing />
+						</Route>
+						<Route exact path="/signup">
+							<Signup />
+						</Route>
+						<Route exact path="/login">
+							<Signin />
+						</Route>
+						<Route exact path="/admin">
+							<Admin />
+						</Route>
+						<Route exact path="/calendar">
+							<Calendar />
+						</Route>
+
+						<Route>
+							<h1>Not found!</h1>
+						</Route>
+					</Switch>
+					<Footer />
+				</ScrollToTop>
 				<Navbar />
 
 				<Reserva />
@@ -37,11 +68,11 @@ const Layout = () => {
 					</Route> */}</Switch>
 				<Switch>
 					<Route>
-					<PerfilTrabajor />
-           </Route>
-          <Route>
-					<Informe />
-          </Route>
+						<PerfilTrabajor />
+					</Route>
+					<Route>
+						<Informe />
+					</Route>
 					<Route>
 						<h1>Not found!</h1>
 					</Route>

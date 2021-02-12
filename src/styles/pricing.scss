@@ -1,0 +1,160 @@
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif
+}
+
+
+
+.panel {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  background-color: white;
+  display: flex;
+  border: solid #3bc5aa;
+  border-radius: 10px;
+  padding: 15px 25px;
+  width: 100%;
+  max-width: 950px;
+  flex-direction: column;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 100px;
+  max-height: fit-content;
+ 
+}
+
+.pricing-plan {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+ border-bottom: 1px solid #3bc5aa;
+}
+
+.pricing-plan:last-child{
+  border-bottom: none;
+}
+ 
+.pricing-img{
+  margin-bottom: 20px;
+  max-width: 100%;
+  
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+
+.pricing-header{
+  color: #888;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+	padding: 0;
+	border: 0;
+
+}
+
+.pricing-features{
+  margin: 50px 0 25px;
+  color: #3bc5aa;
+  
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+.pricing-features-item{
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 15px 0;
+  border-top: 1px solid #3bc5aa;
+}
+
+.pricing-features-item:last-child{
+  border-top: 1px solid #3bc5aa;
+  border-bottom: 1px solid #3bc5aa;
+
+}
+
+.pricing-price {
+  color: #2f9984;;
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.pricing-button{
+  border: 1px solid #3bc5aa;
+  border-radius: 10px;
+  color: #3bc5aa;
+  display: inline-block;
+  padding: 15px 35px;
+  text-decoration: none;
+  margin: 25px 0;
+  transition: background-color 200ms ease-in-out;
+}
+
+.pricing-button:hover, .pricing-button:focus{
+  background-color: #3bc5aa;
+  color:white;
+}
+.pricing-button.is-featured{
+  background-color: #48aaff;
+  color:white;
+}
+
+.pricing-button.is-featured:hover, .pricing-button.is-featured:focus{
+  background-color: #269fff;
+}
+
+@media (min-width: 900px){
+  .panel {
+    flex-direction: row;
+  }
+
+
+.pricing-plan{
+  border-bottom: none;
+  border-right: 1px solid #e1f1ff;
+  padding: 25px 50px;
+}
+
+.pricing-plan:last-child{
+  border-right: none;
+
+}
+
+}
