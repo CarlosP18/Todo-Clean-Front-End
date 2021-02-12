@@ -5,7 +5,8 @@ import logo from "../../img/logo.png";
 export const Footer = () => (
 	<footer
 		className="text-white ml-0 bg-dark"
-		style={{ position: "fixed", padding: "10px 10px 0px 10px", bottom: "0", width: "100%" }}>
+		/* style={{ position: "fixed", padding: "10px 10px 0px 10px", bottom: "0", width: "100%" }} */
+	>
 		<div className="row">
 			<div className="col-md-3 ml-5">
 				<Link className="navbar-brand float-left " to="/">
