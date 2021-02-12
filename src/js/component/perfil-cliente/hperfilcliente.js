@@ -38,7 +38,7 @@ export const HperfilCliente = () => {
 												href="#profile-about"
 												role="tab"
 												aria-controls="profile-about"
-												aria-selected="false">
+												aria-selected="true">
 												Mis Datos
 											</a>
 										</li>
@@ -86,7 +86,7 @@ export const HperfilCliente = () => {
 				</div>
 				<div className="tab-content profile-tab" id="myTabContent">
 					<div
-						className="tab-pane fade"
+						className="tab-pane fade show active"
 						id="profile-about"
 						role="tabpanel"
 						aria-labelledby="profile-about-tab">

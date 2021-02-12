@@ -11,7 +11,7 @@ export const Navbar = () => {
 					<img src={logo} style={{ height: "3rem" }} alt="" loading="lazy" />
 				</Link>
 				<div className="d-flex justify-content-end" id="navbarSupportedContent">
-					<Link className="nav-link text-white" href="#">
+					<Link className="nav-link text-white" to="/ayuda">
 						<b>AYUDA!</b>
 					</Link>
 					<Link

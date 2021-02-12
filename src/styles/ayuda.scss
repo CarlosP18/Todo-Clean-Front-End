@@ -5,8 +5,11 @@
     color: #3bc5aa;
 }
 .btn_ayuda{
-    border: 1px solid #3bc5aa !important;
+    border: none !important;
     color: #3bc5aa;
+    background-color: white;
+    font-size: 25px;
+    text-decoration: underline;
 }
 .nuestra_historia{
     color: #495057;
@@ -19,6 +22,8 @@
     color: white;
     font-size: 20px;
     font-weight: 600 !important;
+    border:none;
+    background-color: #3bc5aa;
 }
 .color_pregunta{
     border: none !important;
