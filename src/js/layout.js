@@ -3,8 +3,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+import { Pricing } from "./views/pricing";
+import { Signup } from "./views/signup";
+import { Signin } from "./views/signin";
+import { Calendar } from "./component/calendar";
+import { Admin } from "./views/admin";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -25,12 +28,22 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
+						<Route exact path="/pricing">
+							<Pricing />
 						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
+						<Route exact path="/signup">
+							<Signup />
 						</Route>
+						<Route exact path="/login">
+							<Signin />
+						</Route>
+						<Route exact path="/admin">
+							<Admin />
+						</Route>
+						<Route exact path="/calendar">
+							<Calendar />
+						</Route>
+
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
