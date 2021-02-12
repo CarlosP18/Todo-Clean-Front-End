@@ -28,11 +28,7 @@ const Ayuda = () => {
 								book. It has survived not only five centuries, but also the leap into electronic
 								typesetting, remaining essentially unchanged.
 							</p>
-							<button
-								type="button"
-								className="btn btn_ayuda"
-								data-toggle="modal"
-								data-target="#exampleModal">
+							<button type="button" className="btn_ayuda" data-toggle="modal" data-target="#exampleModal">
 								Contáctanos!
 							</button>
 							<Modal />
@@ -46,7 +42,7 @@ const Ayuda = () => {
 									<div className="card-header cont_ayuda" id="headingOne">
 										<h2 className="mb-0">
 											<button
-												className="btn font-weight-light color_ayuda"
+												className="font-weight-light color_ayuda"
 												type="button"
 												data-toggle="collapse"
 												data-target="#collapseOne"
@@ -73,7 +69,7 @@ const Ayuda = () => {
 									<div className="card-header cont_ayuda" id="headingTwo">
 										<h2 className="mb-0">
 											<button
-												className="btn collapsed font-weight-light color_ayuda"
+												className="collapsed font-weight-light color_ayuda"
 												type="button"
 												data-toggle="collapse"
 												data-target="#collapseTwo"
@@ -120,7 +116,7 @@ const Ayuda = () => {
 									<div className="card-header cont_ayuda" id="headingThree">
 										<h2 className="mb-0">
 											<button
-												className="btn collapsed font-weight-light color_ayuda"
+												className="collapsed font-weight-light color_ayuda"
 												type="button"
 												data-toggle="collapse"
 												data-target="#collapseThree"
@@ -149,7 +145,7 @@ const Ayuda = () => {
 									<div className="card-header cont_ayuda" id="headingFour">
 										<h2 className="mb-0">
 											<button
-												className="btn font-weight-light color_ayuda"
+												className="font-weight-light color_ayuda"
 												type="button"
 												data-toggle="collapse"
 												data-target="#collapseFour"
@@ -177,7 +173,7 @@ const Ayuda = () => {
 									<div className="card-header cont_ayuda" id="headingFive">
 										<h2 className="mb-0">
 											<button
-												className="btn collapsed font-weight-light color_ayuda"
+												className="collapsed font-weight-light color_ayuda"
 												type="button"
 												data-toggle="collapse"
 												data-target="#collapseFive"
@@ -225,7 +221,7 @@ const Ayuda = () => {
 									<div className="card-header cont_ayuda" id="headingSix">
 										<h2 className="mb-0">
 											<button
-												className="btn collapsed font-weight-light color_ayuda"
+												className="collapsed font-weight-light color_ayuda"
 												type="button"
 												data-toggle="collapse"
 												data-target="#collapseSix"

@@ -68,7 +68,7 @@ const Modal = () => {
 								</div>
 								<div id="success" />
 								{/* <!-- For success/fail messages --> */}
-								<button type="submit" className="btn btn_ayuda" id="sendMessageButton">
+								<button type="submit" className="btn_ayuda" id="sendMessageButton">
 									Enviar
 								</button>
 							</form>
