@@ -18,6 +18,7 @@ import { InicioLabores } from "./views/inicio de labores";
 
 
 
+
 import { PerfilCliente } from "./views/perfilCliente";
 import { PerfilTrabajor } from "./views/perfilTrabajador";
 import Ayuda from "./views/ayuda";
@@ -57,7 +58,12 @@ const Layout = () => {
 						<Route>
 							<PerfilTrabajor />
 						</Route>
-						{/* 						<Route>
+
+						<Route>
+							<PerfilCliente />
+						</Route>
+						<Route>
+
 							<Informe />
 						</Route> */}
 						<Route>
