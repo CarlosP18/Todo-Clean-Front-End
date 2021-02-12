@@ -6,12 +6,12 @@ import { strategy } from "webpack-merge";
 export const Navbar = () => {
 	return (
 		<>
-			<nav className="navbar fixed-top navbar-dark bg-dark">
+			<nav className="navbar fixed-top  navbar-dark bg-dark">
 				<Link className="navbar-brand ml-lg-5 ml-3 " to="/">
 					<img src={logo} style={{ height: "3rem" }} alt="" loading="lazy" />
 				</Link>
 				<div className="d-flex justify-content-end" id="navbarSupportedContent">
-					<Link className="nav-link text-white" href="#">
+					<Link className="nav-link text-white" to="/ayuda">
 						<b>AYUDA!</b>
 					</Link>
 					<Link
