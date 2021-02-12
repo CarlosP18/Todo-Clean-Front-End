@@ -9,6 +9,8 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import Reserva from "./views/reserva";
+import InicioLabores from "./views/inicio de labores";
 
 //create your first component
 const Layout = () => {
@@ -19,24 +21,12 @@ const Layout = () => {
 	return (
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/demo">
-							<Demo />
-						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
-						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
-					<Footer />
-				</ScrollToTop>
+				<Navbar />
+				<Reserva />
+				<Switch>{/* 	<Route>
+						<h1>Not found!</h1>
+					</Route> */}</Switch>
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);
