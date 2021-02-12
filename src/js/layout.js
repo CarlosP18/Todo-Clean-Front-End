@@ -11,6 +11,9 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { PerfilCliente } from "./views/perfilCliente";
 import { PerfilTrabajor } from "./views/perfilTrabajador";
+import {Ayuda} from "./views/ayuda";
+import {Informe} from "./views/informe";
+
 
 //create your first component
 const Layout = () => {
@@ -23,8 +26,12 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<Navbar />
 				<Switch>
-					{/* 					<PerfilCliente /> */}
+					<Route>
 					<PerfilTrabajor />
+           </Route>
+          <Route>
+					<Informe />
+          </Route>
 					<Route>
 						<h1>Not found!</h1>
 					</Route>
