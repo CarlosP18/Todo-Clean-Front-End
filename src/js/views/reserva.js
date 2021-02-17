@@ -3,7 +3,7 @@ import React from "react";
 const Reserva = () => {
 	return (
 		<>
-			<div className="container rounded bg-white">
+			<div className="container rounded bg-white" style={{ marginTop: "30px", marginBottom: "30px" }}>
 				<div className="row d-flex justify-content-center pb-5">
 					<div className="col-sm-5 col-md-5 ml-1">
 						<div className="py-4 d-flex flex-row">

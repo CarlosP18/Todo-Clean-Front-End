@@ -9,7 +9,7 @@ import Reserva from "../../views/reserva";
 export const HperfilCliente = () => {
 	return (
 		<>
-			<div className="container">
+			<div className="container2">
 				<div className="row">
 					<div className="col-md-12">
 						<div id="content" className="content content-full-width">
