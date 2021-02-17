@@ -16,9 +16,6 @@ import { Footer } from "./component/footer";
 import { Reserva } from "./views/reserva";
 import { InicioLabores } from "./views/inicio de labores";
 
-
-
-
 import { PerfilCliente } from "./views/perfilCliente";
 import { PerfilTrabajor } from "./views/perfilTrabajador";
 import Ayuda from "./views/ayuda";
@@ -31,7 +28,6 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
@@ -54,7 +50,7 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/admin">
 							<Admin />
-						</Route> 
+						</Route>
 						<Route exact path="/trabajador">
 							<PerfilTrabajor />
 						</Route>
@@ -70,7 +66,6 @@ const Layout = () => {
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
-
 	);
 };
 
