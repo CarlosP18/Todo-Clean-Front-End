@@ -3,13 +3,14 @@ import validate from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
 
-export const Signup = submitForm => {
+const FormSignup = submitForm => {
 	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
+
 	return (
 		<div className="container-fluid containerForm">
 			<div className="signup-form ">
 				<form onSubmit={handleSubmit} className="form" noValidate>
-					<h2 className="text-center mb-4">Registrate!</h2>
+					<h2 className="text-center mb-4">Trabaja con nosotros!</h2>
 					<hr />
 					<div className="form-group mt-5">
 						<div className="input-group">
@@ -154,3 +155,5 @@ export const Signup = submitForm => {
 		</div>
 	);
 };
+
+export default FormSignup;
