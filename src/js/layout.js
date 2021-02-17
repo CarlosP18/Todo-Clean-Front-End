@@ -13,6 +13,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
+
 import { PerfilCliente } from "./views/perfilCliente";
 import { PerfilTrabajor } from "./views/perfilTrabajador";
 import Ayuda from "./views/ayuda";
@@ -26,7 +27,6 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
@@ -69,8 +69,5 @@ const Layout = () => {
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
-		</div>
-	);
-};
 
 export default injectContext(Layout);
