@@ -1,7 +1,7 @@
 import React from "react";
 import mainImg from "../../img/mainImg.jpeg";
 import logo from "../../img/logo.png";
-import InicioLabores from "./inicio de labores";
+import InicioLabores from "../component/perfil-trabajador/iniciodelabores";
 import "../../styles/pricing.scss";
 
 export const Admin = () => (
