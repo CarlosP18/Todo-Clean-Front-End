@@ -1,10 +1,35 @@
 import React from "react";
-import validate from "../../component/validateinfo";
+import { validateForm } from "../../component/validateinfo";
 import useForm from "../../component/useform";
 import "../../../styles/msjcliente.scss";
 
 export const MisdatosCliente = submitForm => {
-	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
+	const result = (mensaje, codigo, response) => {
+		if (codigo === 200) {
+			alert(mensaje);
+			//redireccionar al login
+		} else {
+			alert("No fue posible registrar: " + mensaje);
+		}
+	};
+
+	const { handleSubmit, handleChange, values, errors } = useForm(
+		result,
+		validateForm,
+		{
+			name: "",
+			last_name: "",
+			rut: "",
+			email: "",
+			password: "",
+			phone: "",
+			city: "",
+			address: ""
+		},
+		"", //colocar ruta aqui
+		"POST"
+	);
+
 	return (
 		<>
 			<div className="container-fluid">
@@ -20,12 +45,12 @@ export const MisdatosCliente = submitForm => {
 										<input
 											className="form-control "
 											type="text"
-											name="username"
+											name="name"
 											placeholder=""
-											value={values.username}
+											value={values.name}
 											onChange={handleChange}
 										/>
-										{errors.username && <h6 className="parrafo">{errors.username}</h6>}
+										{errors.name && <h6 className="parrafo">{errors.name}</h6>}
 									</div>
 
 									<div className="form-group col-6">
@@ -33,12 +58,12 @@ export const MisdatosCliente = submitForm => {
 										<input
 											className="form-control "
 											type="text"
-											name="lastname"
+											name="last_name"
 											placeholder=""
-											value={values.lastname}
+											value={values.last_name}
 											onChange={handleChange}
 										/>
-										{errors.lastname && <h6 className="parrafo">{errors.lastname}</h6>}
+										{errors.last_name && <h6 className="parrafo">{errors.last_name}</h6>}
 									</div>
 								</div>
 								<div className="row">

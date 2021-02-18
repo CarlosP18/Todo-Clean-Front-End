@@ -1,10 +1,35 @@
 import React from "react";
-import validate from "../../component/validateinfo";
+import { validateFormTrabajador } from "../../component/validateinfo";
 import useForm from "../../component/useform";
 import "../../../styles/iniciodelabores.scss";
 
 const InicioLabores = submitForm => {
-	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
+	const result = (mensaje, codigo, response) => {
+		if (codigo === 200) {
+			alert(mensaje);
+			//redireccionar al login
+		} else {
+			alert("No fue posible registrar: " + mensaje);
+		}
+	};
+
+	const { handleSubmit, handleChange, values, errors } = useForm(
+		result,
+		validateFormTrabajador,
+		{
+			name: "",
+			last_name: "",
+			phone: "",
+			email: "",
+			rut: "",
+			city: "",
+			address: "",
+			password: ""
+		},
+		"", //colocar ruta aqui
+		"POST"
+	);
+
 	return (
 		<>
 			<div className="container-labores mb-5 pb-5" style={{ borderRadius: "10px" }}>
@@ -16,24 +41,24 @@ const InicioLabores = submitForm => {
 							<input
 								className="form-control "
 								type="text"
-								name="username"
+								name="name"
 								placeholder="Nombre"
-								value={values.username}
+								value={values.name}
 								onChange={handleChange}
 							/>
-							{errors.username && <h6 className="parrafo">{errors.username}</h6>}
+							{errors.name && <h6 className="parrafo">{errors.name}</h6>}
 						</div>
 						<div className="col-lg-4 col-md-6 col-sm-12 mb-5">
 							<label htmlFor="nombres">Apellido</label>
 							<input
 								className="form-control "
 								type="text"
-								name="lastname"
+								name="last_name"
 								placeholder="Apellido"
 								value={values.lastname}
 								onChange={handleChange}
 							/>
-							{errors.lastname && <h6 className="parrafo">{errors.lastname}</h6>}
+							{errors.last_name && <h6 className="parrafo">{errors.last_name}</h6>}
 						</div>
 						<div className="col-lg-4 col-md-6 col-sm-12 mb-5">
 							<label htmlFor="nombres">Teléfono</label>
@@ -109,6 +134,7 @@ const InicioLabores = submitForm => {
 								placeholder="Ciudad"
 								clasName="form-select"
 								name="state"
+								onChange={handleChange}
 								style={{ height: "35px", marginTop: "34px" }}>
 								<option selected>Seleccione Comuna</option>
 								<option value="Algo">Santiago Centro</option>

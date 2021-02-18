@@ -1,15 +1,29 @@
 import React, { useContext } from "react";
-import validate from "../component/validateinfo";
+import { validateLogin } from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
 import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
 
 export const Signin = () => {
-	const { store, actions } = useContext(Context);
-	const { submitForm } = actions;
+	const result = (mensaje, codigo, json) => {
+		if (codigo === 200) {
+			alert("Bienvenido " + json.user.name);
+			//redireccionar al login
+		} else {
+			alert("No fue posible registrar: " + mensaje);
+		}
+	};
 
-	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
+	const { handleSubmit, handleChange, values, errors } = useForm(
+		result,
+		validateLogin,
+		{
+			email: "",
+			password: ""
+		},
+		"user/signin",
+		"POST"
+	);
 
 	return (
 		<div className="container-fluid containerForm">
