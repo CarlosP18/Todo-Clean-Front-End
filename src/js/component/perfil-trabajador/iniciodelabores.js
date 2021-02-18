@@ -11,7 +11,7 @@ const InicioLabores = submitForm => {
 				<form onSubmit={handleSubmit} className="form" noValidate>
 					<h1 className="text-center mb-4">Formulario inicio de servicios</h1>
 					<div className="form-row mb-3">
-						<div className="col-lg-4 col-md-6 col-sm-12">
+						<div className="col-lg-4 col-md-6 col-sm-12 mb-5">
 							<label htmlFor="nombres">Nombre</label>
 							<input
 								className="form-control "
@@ -23,7 +23,7 @@ const InicioLabores = submitForm => {
 							/>
 							{errors.username && <h6 className="parrafo">{errors.username}</h6>}
 						</div>
-						<div className="col-lg-4 col-md-6 col-sm-12">
+						<div className="col-lg-4 col-md-6 col-sm-12 mb-5">
 							<label htmlFor="nombres">Apellido</label>
 							<input
 								className="form-control "
@@ -35,7 +35,7 @@ const InicioLabores = submitForm => {
 							/>
 							{errors.lastname && <h6 className="parrafo">{errors.lastname}</h6>}
 						</div>
-						<div className="col-lg-4 col-md-6 col-sm-12">
+						<div className="col-lg-4 col-md-6 col-sm-12 mb-5">
 							<label htmlFor="nombres">Teléfono</label>
 							<input
 								className="form-control"
@@ -91,18 +91,6 @@ const InicioLabores = submitForm => {
 							/>
 							{errors.city && <h6 className="parrafo">{errors.city}</h6>}
 						</div>
-						<div className="form-group col-4 ">
-							<label>Comuna</label>
-							<select id="inputState" clasName="form-control" name="state" style={{ height: "35px" }}>
-								<option value="" />
-								<option value="Algo">Santiago Centro</option>
-								<option value="Algo">Providencia</option>
-								<option value="Algo">La Reina</option>
-								<option value="Algo">lampa</option>
-								<option value="Algo">Chillan</option>
-								<option value="Algo">Maipu</option>
-							</select>
-						</div>
 						<div className="form-group  col-4 ">
 							<label>Direccion</label>
 							<input
@@ -114,6 +102,22 @@ const InicioLabores = submitForm => {
 								onChange={handleChange}
 							/>
 							{errors.address && <h6 className="parrafo">{errors.address}</h6>}
+						</div>
+						<div className="form-group col-lg-4 ">
+							<select
+								id="inputState"
+								placeholder="Ciudad"
+								clasName="form-select"
+								name="state"
+								style={{ height: "35px", marginTop: "34px" }}>
+								<option selected>Seleccione Comuna</option>
+								<option value="Algo">Santiago Centro</option>
+								<option value="Algo">Providencia</option>
+								<option value="Algo">La Reina</option>
+								<option value="Algo">lampa</option>
+								<option value="Algo">Chillan</option>
+								<option value="Algo">Maipu</option>
+							</select>
 						</div>
 					</div>
 					<div className="form-row mb-3">

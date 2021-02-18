@@ -1,23 +1,26 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			name: "",
+			last_name: "",
+			rut: "",
+			email: "",
+			phone: "",
+			password: "",
+			password2: ""
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			submitForm: user => {
+				fetch(`http://localhost:3001/user/signup`, {
+					method: "POST",
+					body: JSON.stringify(user),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(res => res.json())
+					.then(response => console.log("Success:", response))
+					.catch(error => console.error("Error:", error));
 			},
 			loadSomeData: () => {
 				/**

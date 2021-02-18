@@ -38,7 +38,7 @@ export default function validateInfo(values) {
 	} else if (values.password2 !== values.password) {
 		errors.password2 = "La contraseña no coincide";
 	}
-	if (!values.city) {
+	/* 	if (!values.city) {
 		errors.city = "Ciudad es requerida";
 	} else if (!/^[a-zA-Z]+$/.test(values.city)) {
 		errors.city = "Ingrese una ciudad valida";
@@ -47,6 +47,6 @@ export default function validateInfo(values) {
 		errors.address = "Direccion es requerida";
 	} else if (!/^[a-zA-Z]+$/.test(values.address)) {
 		errors.address = "Direccion no valida";
-	}
+	} */
 	return errors;
 }

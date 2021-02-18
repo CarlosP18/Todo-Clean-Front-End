@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import validate from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
-export const Signin = submitForm => {
+export const Signin = () => {
+	const { store, actions } = useContext(Context);
+	const { submitForm } = actions;
+
 	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
 
 	return (

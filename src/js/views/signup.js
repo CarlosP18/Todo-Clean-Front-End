@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import validate from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
 
-export const Signup = submitForm => {
+export const Signup = () => {
+	const { store, actions } = useContext(Context);
+	const { submitForm } = actions;
+
 	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
+
 	return (
 		<div className="container-fluid containerForm">
 			<div className="signup-form ">
