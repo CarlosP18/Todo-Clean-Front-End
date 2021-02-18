@@ -4,11 +4,12 @@ import { MisdatosCliente } from "./misdatoscliente";
 import { SolicitudCliente } from "./solicitudescliente";
 import { AgentePreferido } from "./agentepreferidocliente";
 import { MsjCliente } from "./msjcliente";
+import Reserva from "../../views/reserva";
 
 export const HperfilCliente = () => {
 	return (
 		<>
-			<div className="container">
+			<div className="container2">
 				<div className="row">
 					<div className="col-md-12">
 						<div id="content" className="content content-full-width">
@@ -38,7 +39,7 @@ export const HperfilCliente = () => {
 												href="#profile-about"
 												role="tab"
 												aria-controls="profile-about"
-												aria-selected="false">
+												aria-selected="true">
 												Mis Datos
 											</a>
 										</li>
@@ -78,6 +79,18 @@ export const HperfilCliente = () => {
 												Msg Directos Agentes
 											</a>
 										</li>
+										<li className="nav-item">
+											<a
+												className="nav-link"
+												id="profile-reserva-tab"
+												data-toggle="tab"
+												href="#profile-reserva"
+												role="tab"
+												aria-controls="profile-reserva"
+												aria-selected="false">
+												Agenda servicio
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -86,7 +99,7 @@ export const HperfilCliente = () => {
 				</div>
 				<div className="tab-content profile-tab" id="myTabContent">
 					<div
-						className="tab-pane fade"
+						className="tab-pane fade show active"
 						id="profile-about"
 						role="tabpanel"
 						aria-labelledby="profile-about-tab">
@@ -114,6 +127,15 @@ export const HperfilCliente = () => {
 					<div className="tab-pane fade" id="profile-msg" role="tabpanel" aria-labelledby="profile-msg-tab">
 						<div className="col-12" />
 						<MsjCliente />
+					</div>
+					<div
+						className="tab-pane fade"
+						id="profile-reserva"
+						role="tabpanel"
+						aria-labelledby="profile-reserva-tab">
+						<div className="col-12">
+							<Reserva />
+						</div>
 					</div>
 				</div>
 			</div>
