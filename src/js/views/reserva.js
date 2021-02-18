@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { Paypal } from "../component/Paypal";
 
 const Reserva = () => {
+	const [checkout, setCheckout] = useState(false);
+
 	return (
 		<>
 			<div className="container rounded bg-white">
@@ -152,9 +155,18 @@ const Reserva = () => {
 									<b className="green">$85.00</b>
 								</div>
 							</div>
-							<button className="btn btn-primary btn-lg" type="submit">
-								Luis eres el mejor
-							</button>
+							{checkout ? (
+								<Paypal />
+							) : (
+								<button
+									className="btn btn-primary btn-lg"
+									type="submit"
+									onClick={() => {
+										setCheckout(true);
+									}}>
+									Luis eres el mejor
+								</button>
+							)}{" "}
 						</div>
 					</div>
 				</div>

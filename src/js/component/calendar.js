@@ -1,65 +1,54 @@
-import React from "react";
-import mainImg from "../../img/mainImg.jpeg";
-import logo from "../../img/logo.png";
-import "../../styles/calendar.scss";
+import React, { useState } from "react";
+import "@mobiscroll/react/dist/css/mobiscroll.min.css";
+import { Eventcalendar, toast, localeEs } from "@mobiscroll/react";
 
-export const Calendar = () => (
-	<div className="container-fluid justify-content-center wrapper mt-5">
-		<main>
-			<div className="toolbar">
-				<div className="toggle">
-					<div className="toggle__option">semana</div>
-					<div className="toggle__option toggle__option--selected">mes</div>
-				</div>
-				<div className="current-month">Febrero 2021</div>
-			</div>
-			<div className="calendar">
-				<div className="calendar__header">
-					<div>LUN</div>
-					<div>MAR</div>
-					<div>MIE</div>
-					<div>JUE</div>
-					<div>VIE</div>
-					<div>SAB</div>
-					<div>DOM</div>
-				</div>
-				<div className="calendar__week">
-					<div className="calendar__day day">1</div>
-					<div className="calendar__day day">2</div>
-					<div className="calendar__day day">3</div>
-					<div className="calendar__day day">4</div>
-					<div className="calendar__day day">5</div>
-					<div className="calendar__day day">6</div>
-					<div className="calendar__day day">7</div>
-				</div>
-				<div className="calendar__week">
-					<div className="calendar__day day">8</div>
-					<div className="calendar__day day">9</div>
-					<div className="calendar__day day">10</div>
-					<div className="calendar__day day">11</div>
-					<div className="calendar__day day">12</div>
-					<div className="calendar__day day">13</div>
-					<div className="calendar__day day">14</div>
-				</div>
-				<div className="calendar__week">
-					<div className="calendar__day day">15</div>
-					<div className="calendar__day day">16</div>
-					<div className="calendar__day day">17</div>
-					<div className="calendar__day day">18</div>
-					<div className="calendar__day day">19</div>
-					<div className="calendar__day day">20</div>
-					<div className="calendar__day day">21</div>
-				</div>
-				<div className="calendar__week">
-					<div className="calendar__day day">22</div>
-					<div className="calendar__day day">23</div>
-					<div className="calendar__day day">24</div>
-					<div className="calendar__day day">25</div>
-					<div className="calendar__day day">26</div>
-					<div className="calendar__day day">27</div>
-					<div className="calendar__day day">28</div>
-				</div>
-			</div>
-		</main>
-	</div>
-);
+const now = new Date();
+const myEvents = [
+	{
+		start: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 14),
+		end: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16),
+		title: "Limpieza Mantencion",
+		color: "#43DEBE",
+		location: "Cliente: Andrea Bravo - Santo domingo 1475, Santiago"
+	},
+	{
+		start: new Date(now.getFullYear(), now.getMonth(), 19, 14),
+		end: new Date(now.getFullYear(), now.getMonth(), 19, 16),
+		title: "Limpieza Mantencion",
+		color: "#43DEBE",
+		location: "Cliente: Juan Jimenez - Av Francisco Bilbao 4563, Providencia"
+	},
+	{
+		start: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9),
+		end: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12),
+		title: "Planchado",
+		color: "#43DEBE",
+		location: " Cliente: Jose Perez - Direccion: Av Las Condes 3326, Las Condes"
+	}
+];
+
+export function Calendar() {
+	const onEventClick = React.useCallback(event => {
+		toast({
+			message: event.event.location
+		});
+	}, []);
+
+	const view = React.useMemo(() => {
+		return {
+			calendar: { type: "week" },
+			agenda: { type: "day" }
+		};
+	}, []);
+
+	return (
+		<Eventcalendar
+			theme="windows"
+			themeVariant="light"
+			locale={localeEs}
+			data={myEvents}
+			view={view}
+			onEventClick={onEventClick}
+		/>
+	);
+}
