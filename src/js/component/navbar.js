@@ -23,10 +23,17 @@ export const Navbar = () => {
 					</Link>
 					<Link
 						to="/signup"
-						className=" login-signup btn text-white my-2 mr-5 my-sm-0"
+						className=" login-signup btn text-white my-2 mr-2 my-sm-0"
 						type="submit"
 						style={{ backgroundColor: "#43DEBE" }}>
 						<b>Registrate</b>
+					</Link>
+					<Link
+						to="/signuptrabajador"
+						className=" login-signup btn text-white my-2 mr-0 my-sm-0"
+						type="submit"
+						style={{ backgroundColor: "#5E8998" }}>
+						<b>Trabaja con Nosotros</b>
 					</Link>
 				</div>
 			</nav>

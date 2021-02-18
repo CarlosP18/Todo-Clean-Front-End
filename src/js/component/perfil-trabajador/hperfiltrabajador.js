@@ -9,7 +9,7 @@ import Informe from "../../views/informe";
 export const HperfilTrabajador = () => {
 	return (
 		<>
-			<div className="container">
+			<div className="container2">
 				<div className="row">
 					<div className="col-md-12">
 						<div id="content" className="content content-full-width">
