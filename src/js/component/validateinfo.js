@@ -1,15 +1,15 @@
 export default function validateInfo(values) {
 	let errors = {};
 
-	if (!values.username.trim()) {
-		errors.username = "Nombre es requerido";
-	} else if (!/^[a-zA-Z]+$/.test(values.username)) {
-		errors.username = "Ingresa nombre correcto";
+	if (!values.name.trim()) {
+		errors.name = "Nombre es requerido";
+	} else if (!/^[a-zA-Z]+$/.test(values.name)) {
+		errors.name = "Ingresa nombre correcto";
 	}
-	if (!values.lastname) {
-		errors.lastname = "Apellido es requerido";
-	} else if (!/^[a-zA-Z]+$/.test(values.lastname)) {
-		errors.lastname = "ingresa un apellido correcto";
+	if (!values.last_name) {
+		errors.last_name = "Apellido es requerido";
+	} else if (!/^[a-zA-Z]+$/.test(values.last_name)) {
+		errors.last_name = "ingresa un apellido correcto";
 	}
 	if (!values.rut) {
 		errors.rut = "Rut es requerido";
