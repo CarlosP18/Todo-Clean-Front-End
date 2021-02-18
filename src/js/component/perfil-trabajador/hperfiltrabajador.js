@@ -2,14 +2,11 @@ import React from "react";
 import "../../../styles/HperfilCliente.scss";
 import { ServiciosRealizados } from "./serviciosRealizados";
 import { MsjTrabajador } from "./msgtrabajador";
-import { Calendar } from "../calendar";
-import InicioLabores from "./iniciodelabores";
-import Informe from "../../views/informe";
 
 export const HperfilTrabajador = () => {
 	return (
 		<>
-			<div className="container2">
+			<div className="container">
 				<div className="row">
 					<div className="col-md-12">
 						<div id="content" className="content content-full-width">
@@ -26,7 +23,7 @@ export const HperfilTrabajador = () => {
 											<h4 className="m-t-10 m-b-5">Denisse Rozenthal</h4>
 											<p className="m-b-10">Trabajador</p>
 											<a href="#" className="btn btn-sm btn-info mb-2">
-												ver más
+												editar perfil
 											</a>
 										</div>
 									</div>
@@ -36,10 +33,10 @@ export const HperfilTrabajador = () => {
 												className="nav-link"
 												id="profile-formulario-tab"
 												data-toggle="tab"
-												href="#profile-formulario"
+												href="#profile-about"
 												role="tab"
 												aria-controls="profile-formulario"
-												aria-selected="true">
+												aria-selected="false">
 												Formulario de registro
 											</a>
 										</li>
@@ -99,39 +96,12 @@ export const HperfilTrabajador = () => {
 				</div>
 				<div className="tab-content profile-tab" id="myTabContent">
 					<div
-						className="tab-pane fade show active"
-						id="profile-formulario"
-						role="tabpanel"
-						aria-labelledby="profile-formulario-tab">
-						<div className="col-12">
-							<InicioLabores />
-						</div>
-					</div>
-					<div
-						className="tab-pane fade"
-						id="profile-agenda"
-						role="tabpanel"
-						aria-labelledby="profile-agenda-tab">
-						<div className="col-12">
-							<Calendar />
-						</div>
-					</div>
-					<div
 						className="tab-pane fade"
 						id="profile-servicio"
 						role="tabpanel"
 						aria-labelledby="profile-servicio-tab">
 						<div className="col-12">
 							<ServiciosRealizados />
-						</div>
-					</div>
-					<div
-						className="tab-pane fade"
-						id="profile-informe"
-						role="tabpanel"
-						aria-labelledby="profile-informe-tab">
-						<div className="col-12">
-							<Informe />
 						</div>
 					</div>
 					<div className="tab-pane fade" id="profile-msg" role="tabpanel" aria-labelledby="profile-msg-tab">

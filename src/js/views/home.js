@@ -4,11 +4,8 @@ import logo from "../../img/logo.png";
 import "../../styles/home.scss";
 
 export const Home = () => (
-	<div
-		id="containerHome"
-		className="ml-2"
-		style={{ width: "100%", backgroundColor: "white", padding: "0", margin: "0" }}>
-		<div className="firstImg row justify-content-center " style={{ width: "100%" }}>
+	<div className="container-fluid   mt-5" style={{ width: "100%" }}>
+		<div className="firstImg row justify-content-center ml-1  mt-5" style={{ width: "100%" }}>
 			<img
 				className="img-fluid m-3 mt-5"
 				src={logo}
@@ -17,8 +14,8 @@ export const Home = () => (
 				}}
 			/>
 		</div>
-		<div className="row d-flex " style={{ width: "100%" }}>
-			<section id="what-we-do" style={{ width: "100%" }}>
+		<div className="row d-flex ml-2" style={{ width: "100%" }}>
+			<section id="what-we-do">
 				<div className="container-fluid">
 					<h2 className="section-title mb-2 h1">Que Ofrecemos?</h2>
 					<p className="text-center text-muted h5">

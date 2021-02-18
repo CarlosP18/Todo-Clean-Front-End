@@ -1,29 +1,42 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			user: null,
-			users: []
+			demo: [
+				{
+					title: "FIRST",
+					background: "white",
+					initial: "white"
+				},
+				{
+					title: "SECOND",
+					background: "white",
+					initial: "white"
+				}
+			]
 		},
 		actions: {
-			submitForm: user => {
-				fetch(`http://localhost:3000/user/signup`, {
-					method: "POST",
-					body: JSON.stringify(user),
-					headers: {
-						"Content-Type": "application/json"
-					}
-				})
-					.then(res => res.json())
-					.then(response => console.log("Success:", response))
-					.catch(error => console.error("Error:", error));
+			// Use getActions to call a function within a fuction
+			exampleFunction: () => {
+				getActions().changeColor(0, "green");
 			},
 			loadSomeData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
-			register_user: values => {
-				setStore({ user: getStore().user.concat(values) });
+			changeColor: (index, color) => {
+				//get the store
+				const store = getStore();
+
+				//we have to loop the entire demo array to look for the respective index
+				//and change its color
+				const demo = store.demo.map((elm, i) => {
+					if (i === index) elm.background = color;
+					return elm;
+				});
+
+				//reset the global store
+				setStore({ demo: demo });
 			}
 		}
 	};

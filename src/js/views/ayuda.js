@@ -4,8 +4,8 @@ import "../../styles/ayuda.scss";
 const Ayuda = () => {
 	return (
 		<>
-			<div className="fondo_ayuda mt-5 py-5">
-				<div className="container mt-5 ">
+			<div className="fondo_ayuda">
+				<div className="container">
 					<div className="row align-items-center my-5">
 						<div className="col-lg-7">
 							<img
