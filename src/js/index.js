@@ -10,6 +10,7 @@ import "../styles/index.scss";
 import "bootstrap";
 import "jquery";
 import "popper.js";
+
 //import your own components
 import Layout from "./layout";
 
