@@ -3,7 +3,7 @@ import { validateInfo } from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
 
-export const Signup = () => {
+const FormSignup = submitForm => {
 	const result = (mensaje, codigo, response) => {
 		if (codigo === 200) {
 			alert(mensaje);
@@ -24,7 +24,7 @@ export const Signup = () => {
 			password: "",
 			phone: ""
 		},
-		"user/signup",
+		"", //colocar ruta aqui
 		"POST"
 	);
 
@@ -32,7 +32,7 @@ export const Signup = () => {
 		<div className="container-fluid containerForm">
 			<div className="signup-form ">
 				<form onSubmit={handleSubmit} className="form" noValidate>
-					<h2 className="text-center mb-4">Registrate!</h2>
+					<h2 className="text-center mb-4">Trabaja con nosotros!</h2>
 					<hr />
 					<div className="form-group mt-5">
 						<div className="input-group">
@@ -177,3 +177,5 @@ export const Signup = () => {
 		</div>
 	);
 };
+
+export default FormSignup;

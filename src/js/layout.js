@@ -13,13 +13,11 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
-import { Reserva } from "./views/reserva";
-import { InicioLabores } from "./views/inicio de labores";
-
 import { PerfilCliente } from "./views/perfilCliente";
 import { PerfilTrabajor } from "./views/perfilTrabajador";
 import Ayuda from "./views/ayuda";
 import { Informe } from "./views/informe";
+import Form from "../js/views/form";
 
 //create your first component
 const Layout = () => {
@@ -28,44 +26,48 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="d-flex flex-column">
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/ayuda">
-							<Ayuda />
-						</Route>
-						<Route exact path="/pricing">
-							<Pricing />
-						</Route>
-						<Route exact path="/signup">
-							<Signup />
-						</Route>
-						<Route exact path="/login">
-							<Signin />
-						</Route>
-						<Route exact path="/admin">
-							<Admin />
-						</Route>
-						<Route>
-							<PerfilTrabajor />
-						</Route>
-						<Route>
-							<Informe />
-						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter>
-		</div>
+		<BrowserRouter basename={basename}>
+			<ScrollToTop>
+				<Navbar />
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route exact path="/ayuda">
+						<Ayuda />
+					</Route>
+					<Route exact path="/pricing">
+						<Pricing />
+					</Route>
+					<Route exact path="/signuptrabajador">
+						<Form />
+					</Route>
+					<Route exact path="/signup">
+						<Signup />
+					</Route>
+					<Route exact path="/login">
+						<Signin />
+					</Route>
+					<Route exact path="/admin">
+						<Admin />
+					</Route>
+					<Route exact path="/trabajador">
+						<PerfilTrabajor />
+					</Route>
+
+					<Route exact path="/cliente">
+						<PerfilCliente />
+					</Route>
+					<Route>
+						<Informe />
+					</Route>
+					<Route>
+						<h1>Not found!</h1>
+					</Route>
+				</Switch>
+				<Footer />
+			</ScrollToTop>
+		</BrowserRouter>
 	);
 };
-
 export default injectContext(Layout);

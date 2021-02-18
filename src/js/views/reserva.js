@@ -3,133 +3,161 @@ import React from "react";
 const Reserva = () => {
 	return (
 		<>
-			<div className="container bg-success rounded mb-5">
-				<form action="">
-					<div className="col-md-12 col-sm-12">
-						<i className="far fa-user-circle float-right" />
-					</div>
-					<div className="col-md-12">
-						<h1 className="text-center">Reserva</h1>
-					</div>
-					<div className="form-row" />
-					<div className="form-row" />
-					<div className="body d-flex">
-						<div className="body-left col-md-6">
-							<div className="form-row">
-								<div className="col-md-12">
-									<div className="form-group">
-										<legend>Selecciona tipo de vivienda:</legend>
-										<input type="radio" id="vivienda" name="vivienda" />
-										<label htmlFor="vivienda">
-											<i className="fas fa-home" /> Casa
-										</label>
-										<input type="radio" id="vivienda" name="vivienda" />
-										<label htmlFor="vivienda">
-											<i className="far fa-building" /> Departamento
-										</label>
-									</div>
-								</div>
-							</div>
-							<div className="form-row">
-								<div className="col-md-12">
-									<div className="form-group">
-										<legend>Selecciona tipo de servicio:</legend>
-										<input type="radio" id="servicio" name="servicio" />
-										<label htmlFor="servicio">Opción 1</label>
-										<input type="radio" id="servicio" name="servicio" />
-										<label htmlFor="servicio">Opción 2</label>
-										<input type="radio" id="servicio" name="servicio" />
-										<label htmlFor="servicio">Opción 3</label>
-									</div>
-								</div>
-							</div>
-							<div className="form-row">
-								<div className="col-md-12">
-									<div className="form-group">
-										<legend>Selecciona el número de habitaciones y de baños:</legend>
-										<label htmlFor="habitaciones">
-											<i className="fas fa-bed" />
-										</label>
-										<select name="habitaciones" id="habitaciones">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-										</select>
-										<label htmlFor="baños">
-											<i className="fas fa-toilet" />
-										</label>
-										<select name="baños" id="baños">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<div className="form-row">
-								<div className="col-md-12">
-									<div className="form-group">
-										<legend>Servicios adicionales:</legend>
-										<input type="radio" id="adicionales" name="adicionales" />
-										<label htmlFor="adicionales">Opción 1</label>
-										<input type="radio" id="adicionales" name="adicionales" />
-										<label htmlFor="adicionales">Opción 2</label>
-										<input type="radio" id="adicionales" name="adicionales" />
-										<label htmlFor="adicionales">Opción 3</label>
-									</div>
-								</div>
-							</div>
-							<div className="form-row">
-								<div className="col-md-12">
-									<div className="form-group">
-										<legend>Elige una fecha para agendar tu reserva:</legend>
-										<label htmlFor="fecha">
-											<i className="far fa-calendar-alt" />
-										</label>
-										<input type="date" id="fecha" name="fecha" />
-									</div>
-								</div>
-							</div>
+			<div className="container rounded bg-white" style={{ marginTop: "30px", marginBottom: "30px" }}>
+				<div className="row d-flex justify-content-center pb-5">
+					<div className="col-sm-5 col-md-5 ml-1">
+						<div className="py-4 d-flex flex-row">
+							<h5>
+								<b>Reserva</b>{" "}
+							</h5>
 						</div>
-						<div className="body-right col-md-6 bg-danger">
-							<h1 className="text-center">Resumen de la reserva</h1>
-							<div className="form-row">
-								<div className="col-md-12">
-									<ul>
-										<li>Tipo de vivienda:</li>
-										<li>Servicio solicitado:</li>
-										<li>Habitaciones: 3</li>
-										<li>Baños: 2</li>
-										<li>
-											Servicios adicionales:
-											<ul>
-												<li>opcion 1</li>
-												<li>opcion 2</li>
-												<li>opcion 3</li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<hr />
-							<div className="form-row">
-								<div className="col">
-									<h2>Subtotal: $21990</h2>
-									<h2>Servicios adicionales: $5990</h2>
-									<h2>Total: $27980</h2>
-								</div>
-							</div>
-							<hr />
-							<div className="form-row">
-								<div className="col text-center">
-									<button className="btn btn-primary">Agendar</button>
-								</div>
-							</div>
+						<div className="form-check">
+							<h5>Selecciona el tipo de vivienda:</h5>
+							<input className="form-check-input" type="radio" name="vivienda" id="vivienda" />
+							<label htmlFor="vivienda" className="form-check-label">
+								<i className="fas fa-home" /> Casa
+							</label>
+						</div>
+						<div className="form-check">
+							<input className="form-check-input" type="radio" name="vivienda" id="vivienda" />
+							<label htmlFor="vivienda" className="form-check-label">
+								<i className="fas fa-building" /> Departamento
+							</label>
+						</div>
+						<hr />
+						<div className="form-check mt-3">
+							<h5>Selecciona el tipo de servicio:</h5>
+							<input className="form-check-input" type="radio" name="servicio" id="servicio" />
+							<label htmlFor="servicio" className="form-check-label">
+								Opcion 1
+							</label>
+						</div>
+						<div className="form-check">
+							<input className="form-check-input" type="radio" name="servicio" id="servicio" />
+							<label htmlFor="vivienda" className="form-check-label">
+								Opcion 2
+							</label>
+						</div>
+						<div className="form-check">
+							<input className="form-check-input" type="radio" name="servicio" id="servicio" />
+							<label htmlFor="vivienda" className="form-check-label">
+								Opcion 3
+							</label>
+						</div>
+						<hr />
+						<div className="form-check mt-3">
+							<h5>Ingresa número de habitaciones:</h5>
+							<label htmlFor="habitaciones" className="form-check-label">
+								<i className="fas fa-bed" />
+							</label>
+							<input
+								style={{ border: "solid 1px", width: "15%", marginLeft: "10px", borderRadius: "4px" }}
+								className="form-check-input"
+								type="number"
+								name="habitaciones"
+								id="habitaciones"
+							/>
+						</div>
+						<hr />
+						<div className="form-check mt-3">
+							<h5>Ingresa número de baños:</h5>
+							<label htmlFor="baño" className="form-check-label">
+								<i className="fas fa-bath" />
+							</label>
+							<input
+								style={{ border: "solid 1px", width: "15%", marginLeft: "10px", borderRadius: "4px" }}
+								className="form-check-input"
+								type="number"
+								name="baño"
+								id="baño"
+							/>
+						</div>
+						<hr />
+						<div className="form-check mt-3">
+							<h5>Selecciona servicios adicionales:</h5>
+							<input className="form-check-input" type="radio" name="adicionales" id="adicionales" />
+							<label htmlFor="adicionales" className="form-check-label">
+								Opcion 1
+							</label>
+						</div>
+						<div className="form-check">
+							<input className="form-check-input" type="radio" name="adicionales" id="adicionales" />
+							<label htmlFor="adicionales" className="form-check-label">
+								Opcion 2
+							</label>
+						</div>
+						<hr />
+						<div className="form-check">
+							<label htmlFor="">
+								<i className="far fa-calendar-alt" />
+							</label>
+							<input
+								style={{ border: "solid 1px", width: "40%", marginLeft: "10px", borderRadius: "4px" }}
+								type="date"
+							/>
 						</div>
 					</div>
-				</form>
+					<div className="col-sm-3 col-md-4 offset-md-1 mobile">
+						<div className="py-4 d-flex justify-content-end" />
+						<div className="bg-light rounded d-flex flex-column">
+							<div className="p-2 ml-3">
+								<h4>Resumen de la reserva</h4>
+							</div>
+							<div className="p-2 d-flex">
+								<div className="col-8">Tipo de vivienda:</div>
+								<div className="ml-auto">Casa</div>
+							</div>
+							<div className="p-2 d-flex">
+								<div className="col-8">Servicio</div>
+								<div className="ml-auto">Opcion 1</div>
+							</div>
+							<div className="p-2 d-flex">
+								<div className="col-8">Habitaciones</div>
+								<div className="ml-auto">3</div>
+							</div>
+							<div className="p-2 d-flex">
+								<div className="col-8">Baños</div>
+								<div className="ml-auto">5</div>
+							</div>
+							<div className="border-top px-4 mx-3"> </div>
+							<div className="p-2 d-flex pt-3">
+								<div className="col-8">Servicios adicionales</div>
+								<div className="ml-auto">opcion 1</div>
+							</div>
+							<div className="p-2 d-flex">
+								<div className="col-8">Maximum out-of-pocket on Insurance Policy (not reached)</div>
+								<div className="ml-auto">$6500.00</div>
+							</div>
+							<div className="border-top px-4 mx-3" />
+							<div className="p-2 d-flex pt-3">
+								<div className="col-8">Insurance Responsibility</div>
+								<div className="ml-auto">
+									<b>$71.76</b>
+								</div>
+							</div>
+							<div className="p-2 d-flex">
+								<div className="col-8">
+									Patient Balance <span className="fa fa-question-circle text-secondary" />
+								</div>
+								<div className="ml-auto">
+									<b>$71.76</b>
+								</div>
+							</div>
+							<div className="border-top px-4 mx-3" />
+							<div className="p-2 d-flex pt-3">
+								<div className="col-8">
+									<b>Total</b>
+								</div>
+								<div className="ml-auto">
+									<b className="green">$85.00</b>
+								</div>
+							</div>
+							<button className="btn btn-primary btn-lg" type="submit">
+								Luis eres el mejor
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</>
 	);
