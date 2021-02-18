@@ -1,156 +1,133 @@
 import React from "react";
-import validate from "../component/validateinfo";
-import useForm from "../component/useform";
+import mainImg from "../../img/mainImg.jpeg";
+import logo from "../../img/logo.png";
+
 import "../../styles/signup.scss";
 
-export const Signup = submitForm => {
-	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
-	return (
-		<div className="container-fluid containerForm">
-			<div className="signup-form ">
-				<form onSubmit={handleSubmit} className="form" noValidate>
-					<h2 className="text-center mb-4">Registrate!</h2>
-					<hr />
-					<div className="form-group mt-5">
-						<div className="input-group">
-							<div className="input-group-prepend">
-								<span className="input-group-text">
-									<span className="fa fa-user" />
-								</span>
-							</div>
-							<input
-								className="form-control "
-								type="text"
-								name="name"
-								placeholder="ingrese nombre"
-								value={values.name}
-								onChange={handleChange}
-							/>
+export const Signup = () => (
+	<div className="container-fluid containerForm">
+		<div className="signup-form ">
+			<form action="" method="post">
+				<h2 className="text-center mb-4">Registrate</h2>
+				<hr />
+				<div className="form-group mt-5">
+					<div className="input-group">
+						<div className="input-group-prepend">
+							<span className="input-group-text">
+								<span className="fa fa-user" />
+							</span>
 						</div>
-						{errors.name && <p className="parrafo">{errors.name}</p>}
+						<input
+							type="text"
+							className="form-control"
+							name="username"
+							placeholder="Nombre"
+							required="required"
+						/>
 					</div>
-					<div className="form-group">
-						<div className="input-group">
-							<div className="input-group-prepend">
-								<span className="input-group-text">
-									<span className="fa fa-user" />
-								</span>
-							</div>
-							<input
-								className="form-control "
-								type="text"
-								name="last_name"
-								placeholder="ingrese apellido"
-								value={values.last_name}
-								onChange={handleChange}
-							/>
+				</div>
+				<div className="form-group">
+					<div className="input-group">
+						<div className="input-group-prepend">
+							<span className="input-group-text">
+								<span className="fa fa-user" />
+							</span>
 						</div>
-						{errors.last_name && <p className="parrafo">{errors.last_name}</p>}
+						<input
+							type="text"
+							className="form-control"
+							name="username"
+							placeholder="Apellido"
+							required="required"
+						/>
 					</div>
-					<div className="form-group">
-						<div className="input-group">
-							<div className="input-group-prepend">
-								<span className="input-group-text">
-									<span className="far fa-id-card" />
-								</span>
-							</div>
-							<input
-								className="form-control "
-								type="text"
-								name="rut"
-								placeholder="ingrese rut"
-								value={values.rut}
-								onChange={handleChange}
-							/>
+				</div>
+				<div className="form-group">
+					<div className="input-group">
+						<div className="input-group-prepend">
+							<span className="input-group-text">
+								<i className="fa fa-paper-plane" />
+							</span>
 						</div>
-						{errors.rut && <p className="parrafo">{errors.rut}</p>}
+						<input
+							type="email"
+							className="form-control"
+							name="email"
+							placeholder="Correo"
+							required="required"
+						/>
 					</div>
-					<div className="form-group">
-						<div className="input-group">
-							<div className="input-group-prepend">
-								<span className="input-group-text">
-									<span className="fa fa-paper-plane" />
-								</span>
-							</div>
-							<input
-								className="form-control"
-								type="email"
-								name="email"
-								placeholder="ingrese email"
-								value={values.email}
-								onChange={handleChange}
-							/>
+				</div>
+				<div className="form-group">
+					<div className="input-group">
+						<div className="input-group-prepend">
+							<span className="input-group-text">
+								<i className="fas fa-phone" />
+							</span>
 						</div>
-						{errors.email && <p className="parrafo">{errors.email}</p>}
+						<input
+							type="email"
+							className="form-control"
+							name="email"
+							placeholder="Telefono"
+							required="required"
+						/>
 					</div>
-					<div className="form-group">
-						<div className="input-group">
-							<div className="input-group-prepend">
-								<span className="input-group-text">
-									<span className="fas fa-mobile-alt" />
-								</span>
-							</div>
-							<input
-								className="form-control"
-								type="texto"
-								name="phone"
-								placeholder="numero de telefono de 9 digitos"
-								value={values.phone}
-								onChange={handleChange}
-							/>
+				</div>
+				<p>Minimo 8 caracteres</p>
+				<div className="form-group">
+					<div className="input-group">
+						<div className="input-group-prepend">
+							<span className="input-group-text">
+								<i className="fa fa-lock" />
+							</span>
 						</div>
-						{errors.phone && <p className="parrafo">{errors.phone}</p>}
+						<input
+							type="password"
+							className="form-control"
+							name="password"
+							placeholder="Contraseña"
+							required="required"
+						/>
 					</div>
-					<p>Minimo 8 caracteres</p>
-					<div className="form-group">
-						<div className="input-group">
-							<div className="input-group-prepend">
-								<span className="input-group-text">
-									<span className="fa fa-user" />
-								</span>
-							</div>
-							<input
-								className="form-control"
-								type="password"
-								name="password"
-								placeholder="ingresa contraseña"
-								value={values.password}
-								onChange={handleChange}
-							/>
+				</div>
+				<div className="form-group">
+					<div className="input-group">
+						<div className="input-group-prepend">
+							<span className="input-group-text">
+								<i className="fa fa-lock" />
+								<i className="fa fa-check" />
+							</span>
 						</div>
-						{errors.password && <p className="parrafo">{errors.password}</p>}
+						<input
+							type="password"
+							className="form-control"
+							name="confirm_password"
+							placeholder="Confirmar Contraseña"
+							required="required"
+						/>
 					</div>
-					<div className="form-group">
-						<div className="input-group">
-							<div className="input-group-prepend">
-								<span className="input-group-text">
-									<span className="fa fa-user" />
-								</span>
-							</div>
-							<input
-								className="form-control"
-								type="password"
-								name="password2"
-								placeholder="confirma contraseña"
-								value={values.password2}
-								onChange={handleChange}
-							/>
-						</div>
-						{errors.password2 && <p className="parrafo">{errors.password2}</p>}
-					</div>
-					<div className="form-group">
-						<label className="form-check-label mt-4">
-							<input type="checkbox" required="required" /> He leido y acepto los{" "}
-							<a href="#">Terminos y condiciones</a>
-						</label>
-					</div>
-					<div className="form-group d-flex justify-content-center">
-						<button type="submit" className="btn btn-primary btn-lg">
-							Registrar
-						</button>
-					</div>
-				</form>
-			</div>
+				</div>
+				<div className="form-check">
+					<input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+					<label className="form-check-label">Quiero registrarme como cliente</label>
+				</div>
+				<div className="form-check">
+					<input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+					<label className="form-check-label">Quiero registrarme como Trabajador</label>
+				</div>
+				<div className="form-group">
+					<label className="form-check-label mt-4">
+						<input type="checkbox" required="required" /> He leido y acepto los{" "}
+						<a href="#">Terminos y condiciones</a>
+					</label>
+				</div>
+				<div className="form-group d-flex justify-content-center">
+					<button type="submit" className="btn btn-primary btn-lg">
+						Registrar
+					</button>
+				</div>
+			</form>
 		</div>
-	);
-};
+	</div>
+);
