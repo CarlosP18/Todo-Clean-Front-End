@@ -1,10 +1,32 @@
 import React from "react";
-import validate from "../component/validateinfo";
+import { validateInfo } from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
 
 const FormSignup = submitForm => {
-	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
+	const result = (mensaje, codigo, response) => {
+		if (codigo === 200) {
+			alert(mensaje);
+			//redireccionar al login
+		} else {
+			alert("No fue posible registrar: " + mensaje);
+		}
+	};
+
+	const { handleSubmit, handleChange, values, errors } = useForm(
+		result,
+		validateInfo,
+		{
+			name: "",
+			last_name: "",
+			rut: "",
+			email: "",
+			password: "",
+			phone: ""
+		},
+		"", //colocar ruta aqui
+		"POST"
+	);
 
 	return (
 		<div className="container-fluid containerForm">
@@ -22,13 +44,13 @@ const FormSignup = submitForm => {
 							<input
 								className="form-control "
 								type="text"
-								name="username"
+								name="name"
 								placeholder="ingrese nombre"
-								value={values.username}
+								value={values.name}
 								onChange={handleChange}
 							/>
 						</div>
-						{errors.username && <p className="parrafo">{errors.username}</p>}
+						{errors.name && <p className="parrafo">{errors.name}</p>}
 					</div>
 					<div className="form-group">
 						<div className="input-group">
@@ -40,13 +62,13 @@ const FormSignup = submitForm => {
 							<input
 								className="form-control "
 								type="text"
-								name="lastname"
+								name="last_name"
 								placeholder="ingrese apellido"
-								value={values.lastname}
+								value={values.last_name}
 								onChange={handleChange}
 							/>
 						</div>
-						{errors.lastname && <p className="parrafo">{errors.lastname}</p>}
+						{errors.last_name && <p className="parrafo">{errors.last_name}</p>}
 					</div>
 					<div className="form-group">
 						<div className="input-group">

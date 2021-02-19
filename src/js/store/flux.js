@@ -5,9 +5,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			users: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			submitForm: user => {
+				fetch(`http://localhost:3000/user/signup`, {
+					method: "POST",
+					body: JSON.stringify(user),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(res => res.json())
+					.then(response => console.log("Success:", response))
+					.catch(error => console.error("Error:", error));
 			},
 			loadSomeData: () => {
 				/**

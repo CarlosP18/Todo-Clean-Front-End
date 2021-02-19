@@ -1,10 +1,32 @@
 import React from "react";
-import validate from "../component/validateinfo";
+import { validateInfo } from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
 
-export const Signup = submitForm => {
-	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
+export const Signup = () => {
+	const result = (mensaje, codigo, response) => {
+		if (codigo === 200) {
+			alert(mensaje);
+			//redireccionar al login
+		} else {
+			alert("No fue posible registrar: " + mensaje);
+		}
+	};
+
+	const { handleSubmit, handleChange, values, errors } = useForm(
+		result,
+		validateInfo,
+		{
+			name: "",
+			last_name: "",
+			rut: "",
+			email: "",
+			password: "",
+			phone: ""
+		},
+		"user/signup",
+		"POST"
+	);
 
 	return (
 		<div className="container-fluid containerForm">
