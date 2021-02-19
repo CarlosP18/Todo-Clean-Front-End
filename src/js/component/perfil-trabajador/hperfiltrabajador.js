@@ -7,6 +7,17 @@ import InicioLabores from "./iniciodelabores";
 import Informe from "../../views/informe";
 
 export const HperfilTrabajador = () => {
+	const storage = localStorage.getItem("session");
+	let session = {
+		name: "",
+		last_name: ""
+	};
+	if (storage !== null) {
+		const json = JSON.parse(storage);
+		if (json.user) {
+			session = json.user;
+		}
+	}
 	return (
 		<>
 			<div className="container2">
@@ -23,7 +34,9 @@ export const HperfilTrabajador = () => {
 										</div>
 
 										<div className="profile-header-info">
-											<h4 className="m-t-10 m-b-5">Denisse Rozenthal</h4>
+											<h4 className="m-t-10 m-b-5">
+												{session.name} {session.last_name}
+											</h4>
 											<p className="m-b-10">Trabajador</p>
 											<a href="#" className="btn btn-sm btn-info mb-2">
 												ver más

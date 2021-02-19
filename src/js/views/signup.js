@@ -21,8 +21,8 @@ export const Signup = () => {
 			last_name: "",
 			rut: "",
 			email: "",
-			password: "",
-			phone: ""
+			phone: "",
+			password: ""
 		},
 		"user/signup",
 		"POST"
