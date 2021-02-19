@@ -24,10 +24,11 @@ export const MisdatosCliente = submitForm => {
 			password: "",
 			phone: "",
 			city: "",
-			address: ""
+			address: "",
+			comuna: ""
 		},
 		"", //colocar ruta aqui
-		"POST"
+		"PUT" //para actualizar datos
 	);
 
 	return (
@@ -52,7 +53,6 @@ export const MisdatosCliente = submitForm => {
 										/>
 										{errors.name && <h6 className="parrafo">{errors.name}</h6>}
 									</div>
-
 									<div className="form-group col-6">
 										<label> Apellido</label>
 										<input
@@ -94,7 +94,7 @@ export const MisdatosCliente = submitForm => {
 									</div>
 								</div>
 								<div className="form-group row">
-									<div className="form-group col-6">
+									<div className="form-group col-4">
 										<label> Ciudad</label>
 										<input
 											className="form-control"
@@ -106,7 +106,19 @@ export const MisdatosCliente = submitForm => {
 										/>
 										{errors.city && <h6 className="parrafo">{errors.city}</h6>}
 									</div>
-									<div className="form-group col-6">
+									<div className="form-group col-lg-4 ">
+										<label> Comuna</label>
+										<input
+											className="form-control"
+											type="texto"
+											name="comuna"
+											placeholder=""
+											value={values.comuna}
+											onChange={handleChange}
+										/>
+										{errors.comuna && <h6 className="parrafo">{errors.comuna}</h6>}
+									</div>
+									<div className="form-group col-4">
 										<label> Direccion</label>
 										<input
 											className="form-control"
@@ -117,24 +129,6 @@ export const MisdatosCliente = submitForm => {
 											onChange={handleChange}
 										/>
 										{errors.address && <h6 className="parrafo">{errors.address}</h6>}
-									</div>
-								</div>
-								<div className="form-group row">
-									<div className="form-group col-lg-4 ">
-										<select
-											id="inputState"
-											placeholder="Ciudad"
-											clasName="form-select"
-											name="state"
-											style={{ height: "35px" }}>
-											<option selected>Comuna</option>
-											<option value="Algo">Santiago Centro</option>
-											<option value="Algo">Providencia</option>
-											<option value="Algo">La Reina</option>
-											<option value="Algo">lampa</option>
-											<option value="Algo">Chillan</option>
-											<option value="Algo">Maipu</option>
-										</select>
 									</div>
 								</div>
 								<button type="submit" className="col-12 btn btn-primary">

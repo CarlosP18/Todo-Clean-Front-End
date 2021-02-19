@@ -24,7 +24,7 @@ const FormSignup = submitForm => {
 			password: "",
 			phone: ""
 		},
-		"", //colocar ruta aqui
+		"/user/signup-trabajador", //colocar ruta aqui
 		"POST"
 	);
 

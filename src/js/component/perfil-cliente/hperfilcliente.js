@@ -7,6 +7,17 @@ import { MsjCliente } from "./msjcliente";
 import Reserva from "../../views/reserva";
 
 export const HperfilCliente = () => {
+	const storage = localStorage.getItem("session");
+	let session = {
+		name: "",
+		last_name: ""
+	};
+	if (storage !== null) {
+		const json = JSON.parse(storage);
+		if (json.user) {
+			session = json.user;
+		}
+	}
 	return (
 		<>
 			<div className="container2">
@@ -23,7 +34,9 @@ export const HperfilCliente = () => {
 										</div>
 
 										<div className="profile-header-info">
-											<h4 className="m-t-10 m-b-5">Monica de las nieves</h4>
+											<h4 className="m-t-10 m-b-5">
+												{session.name} {session.last_name}
+											</h4>
 											<p className="m-b-10">Cliente</p>
 											<a href="#" className="btn btn-sm btn-info mb-2">
 												editar perfil
