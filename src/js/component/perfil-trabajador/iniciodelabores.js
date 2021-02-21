@@ -7,6 +7,7 @@ const InicioLabores = submitForm => {
 	const [disable, setDisable] = useState(true);
 	const storage = localStorage.getItem("session");
 	let session = {
+		id: 0,
 		name: "",
 		last_name: "",
 		phone: "",
@@ -39,9 +40,10 @@ const InicioLabores = submitForm => {
 		result,
 		validateFormTrabajador,
 		session,
-
-		//`trabajador/formulario-inicio/id=${values.id}`, //colocar ruta aqui
+		"/trabajador/formulario-inicio/" + session.id,
 		"PUT"
+		//`trabajador/formulario-inicio/id=${values.id}`, //colocar ruta aqui
+		//"/trabajador/formulario-inicio/" + values.id,
 	);
 
 	return (

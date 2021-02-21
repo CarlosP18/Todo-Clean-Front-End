@@ -7,7 +7,6 @@ export const Signup = () => {
 	const result = (mensaje, codigo, response) => {
 		if (codigo === 200) {
 			alert(mensaje);
-			//redireccionar al login
 		} else {
 			alert("No fue posible registrar: " + mensaje);
 		}
@@ -24,7 +23,7 @@ export const Signup = () => {
 			phone: "",
 			password: ""
 		},
-		"user/signup",
+		"/user/signup",
 		"POST"
 	);
 

@@ -99,12 +99,12 @@ export const MisdatosCliente = submitForm => {
 										<input
 											className="form-control"
 											type="texto"
-											name="city"
+											name="ciudad"
 											placeholder=""
-											value={values.city}
+											value={values.ciudad}
 											onChange={handleChange}
 										/>
-										{errors.city && <h6 className="parrafo">{errors.city}</h6>}
+										{errors.ciudad && <h6 className="parrafo">{errors.ciudad}</h6>}
 									</div>
 									<div className="form-group col-lg-4 ">
 										<label> Comuna</label>
