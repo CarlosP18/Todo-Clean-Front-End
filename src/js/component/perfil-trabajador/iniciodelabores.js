@@ -4,15 +4,17 @@ import useForm from "../../component/useform";
 import "../../../styles/iniciodelabores.scss";
 
 const InicioLabores = submitForm => {
-	const [disable, setDisable] = useState(true);
-	const storage = localStorage.getItem("session");
+	const [disable, setDisable] = useState(true); // esto sirve para habilitar el editar
+	const storage = localStorage.getItem("session"); //session es la informacion almacenada en la sesion del navegador
 	let session = {
+		//informacion contenida en el formulario
+		id: 0,
 		name: "",
 		last_name: "",
 		phone: "",
 		email: "",
 		rut: "",
-		city: "",
+		ciudad: "",
 		address: "",
 		comuna: "",
 		nacimiento: "",
@@ -24,23 +26,24 @@ const InicioLabores = submitForm => {
 		const json = JSON.parse(storage);
 		if (json.user) {
 			session = json.user;
+			//si existe  informacion del usuario se precargan en los datos
 		}
 	}
 	const result = (mensaje, codigo, response) => {
+		//resultado del fetch del useforme
 		if (codigo === 200) {
 			alert(mensaje);
-			//redireccionar al login
 		} else {
 			alert("No fue posible registrar: " + mensaje);
 		}
 	};
 
 	const { handleSubmit, handleChange, values, errors } = useForm(
-		result,
-		validateFormTrabajador,
-		session,
-		"", //colocar ruta aqui
-		"PUT"
+		result, //funcion de  resultado del fetch(callback)
+		validateFormTrabajador, // funcion de validacion
+		session, //informacion por defecto del formulario
+		"trabajador/formulario-inicio/" + session.id, //url del api
+		"PUT" // metodo del api
 	);
 
 	return (
@@ -135,13 +138,13 @@ const InicioLabores = submitForm => {
 										<input
 											className="form-control"
 											type="texto"
-											name="city"
+											name="ciudad"
 											placeholder="Ciudad"
 											readOnly={disable}
-											value={values.city}
+											value={values.ciudad}
 											onChange={handleChange}
 										/>
-										{errors.city && <h6 className="parrafo">{errors.city}</h6>}
+										{errors.ciudad && <h6 className="parrafo">{errors.ciudad}</h6>}
 									</div>
 									<div className="form-group  col-4 mb-3">
 										<label className="ml-2">Comuna</label>
