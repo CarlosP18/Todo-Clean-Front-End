@@ -88,10 +88,10 @@ export function validateForm(values) {
 	} else if (!/\S+@\S+\.\S+/.test(values.email)) {
 		errors.email = "Email no valido";
 	}
-	if (!values.city) {
-		errors.city = "Ciudad es requerida";
-	} else if (!/^[a-zA-Z]+$/.test(values.city)) {
-		errors.city = "Ingrese una ciudad valida";
+	if (!values.ciudad) {
+		errors.ciudad = "Ciudad es requerida";
+	} else if (!/^[a-zA-Z]+$/.test(values.ciudad)) {
+		errors.ciudad = "Ingrese una ciudad valida";
 	}
 	if (!values.address) {
 		errors.address = "Direccion es requerida";
@@ -133,14 +133,14 @@ export function validateFormTrabajador(values) {
 	} else if (!/\S+@\S+\.\S+/.test(values.email)) {
 		errors.email = "Email no valido";
 	}
-	if (!values.city) {
-		errors.city = "Ciudad es requerida";
-	} else if (!/^[a-zA-Z]+$/.test(values.city)) {
-		errors.city = "Ingrese una ciudad valida";
+	if (!values.ciudad) {
+		errors.ciudad = "Ciudad es requerida";
+	} else if (!/^[a-zA-Z0-9_.-]*$/.test(values.ciudad)) {
+		errors.ciudad = "Ingrese una ciudad valida";
 	}
 	if (!values.address) {
 		errors.address = "Direccion es requerida";
-	} else if (!/^[a-zA-Z]+$/.test(values.address)) {
+	} else if (!/^[a-zA-Z\s]+[0-9]/.test(values.address)) {
 		errors.address = "Direccion no valida";
 	}
 	if (!values.comuna) {
