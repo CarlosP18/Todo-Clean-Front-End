@@ -8,7 +8,9 @@ export const Signin = () => {
 	const result = (mensaje, codigo, json) => {
 		if (codigo === 200) {
 			alert("Bienvenido " + json.user.name);
-			//redireccionar al login
+			if (rol_id === 2) {
+				<Link path="/trabajador" />;
+			}
 		} else {
 			alert("No fue posible registrar: " + mensaje);
 		}

@@ -103,6 +103,7 @@ export function validateForm(values) {
 	} else if (!/^[a-zA-Z]+$/.test(values.comuna)) {
 		errors.comuna = "Direccion no valida";
 	}
+	return errors;
 }
 //formulario de trabajador inicio de labores
 export function validateFormTrabajador(values) {
