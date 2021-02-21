@@ -1,8 +1,13 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			user: null,
-			users: []
+			precios: {
+				mantencion: 20000,
+				planchado: 25000,
+				vidrios: 20000,
+				habitacionExtra: 5000,
+				banoExtra: 6000
+			}
 		},
 		actions: {
 			submitForm: user => {

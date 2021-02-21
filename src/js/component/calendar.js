@@ -43,7 +43,7 @@ export function Calendar() {
 
 	return (
 		<Eventcalendar
-			theme="windows"
+			theme="material"
 			themeVariant="light"
 			locale={localeEs}
 			data={myEvents}
