@@ -19,7 +19,7 @@ const useForm = (callback, validate, datos, endpoint, method) => {
 		if (session) {
 			token = JSON.parse(session).access_token;
 		}
-		fetch("http://localhost:3000/" + endpoint, {
+		fetch("http://localhost:4000/" + endpoint, {
 			method,
 			body: info ? JSON.stringify(info) : undefined,
 			headers:
@@ -39,7 +39,7 @@ const useForm = (callback, validate, datos, endpoint, method) => {
 				};
 			})
 			.then(res => {
-				if (endpoint === "user/signup" || endpoint === "user/signin") {
+				if (endpoint === "user/signup" || endpoint === "user/signin" || endpoint === "user/signup-trabajador") {
 					if (parseInt(res.response.status) === 200) {
 						localStorage.setItem("session", JSON.stringify(res.json));
 					}
