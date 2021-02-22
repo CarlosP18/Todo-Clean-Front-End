@@ -18,10 +18,10 @@ export const Footer = () => (
 					</Link>
 				</div>
 			</div>
-			<div className="col-md-4 mt-3 text-center">
+			<div className="col-md-4 mt-3 text-center d-none d-md-block">
 				<p className="mb-1">© 2020 Copyright</p>
 			</div>
-			<div className="col-md-4 mt-3 text-right">
+			<div className="col-md-4 mt-3 text-right d-none d-md-block ">
 				<i className="far fa-envelope"> contacto@todoclean.cl</i>
 			</div>
 		</div>

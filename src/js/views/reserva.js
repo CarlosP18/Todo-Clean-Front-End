@@ -205,7 +205,10 @@ const Reserva = () => {
 											<b>Total</b>
 										</div>
 										<div className="ml-auto">
-											<b className="green">${total}</b>
+											<b className="green">
+												$y
+												{total}
+											</b>
 										</div>
 									</div>
 								</>
