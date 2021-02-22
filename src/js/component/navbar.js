@@ -11,30 +11,40 @@ export const Navbar = () => {
 					<img src={logo} style={{ height: "3rem" }} alt="" loading="lazy" />
 				</Link>
 				<div className="d-flex justify-content-end" id="navbarSupportedContent">
-					<Link className="nav-link text-white" to="/ayuda">
-						<b>AYUDA!</b>
-					</Link>
-					<Link
-						to="/login"
-						className=" login-signup btn text-white my-2 mx-2 my-sm-0"
-						type="submit"
-						style={{ backgroundColor: "#43DEBE" }}>
-						<b>Login</b>
-					</Link>
-					<Link
-						to="/signup"
-						className=" login-signup btn text-white my-2 mr-2 my-sm-0"
-						type="submit"
-						style={{ backgroundColor: "#43DEBE" }}>
-						<b>Registrate</b>
-					</Link>
-					<Link
-						to="/signuptrabajador"
-						className=" login-signup btn text-white my-2 mr-0 my-sm-0"
-						type="submit"
-						style={{ backgroundColor: "#5E8998" }}>
-						<b>Trabaja con Nosotros</b>
-					</Link>
+					{localStorage.getItem("user-infor") ? (
+						<>
+							<Link className="nav-link text-white" to="/ayuda">
+								<b>Logout</b>
+							</Link>
+						</>
+					) : (
+						<>
+							<Link className="nav-link text-white" to="/ayuda">
+								<b>AYUDA!</b>
+							</Link>
+							<Link
+								to="/login"
+								className=" login-signup btn text-white my-2 mx-2 my-sm-0"
+								type="submit"
+								style={{ backgroundColor: "#43DEBE" }}>
+								<b>Login</b>
+							</Link>
+							<Link
+								to="/signup"
+								className=" login-signup btn text-white my-2 mr-2 my-sm-0"
+								type="submit"
+								style={{ backgroundColor: "#43DEBE" }}>
+								<b>Registrate</b>
+							</Link>
+							<Link
+								to="/signuptrabajador"
+								className=" login-signup btn text-white my-2 mr-0 my-sm-0"
+								type="submit"
+								style={{ backgroundColor: "#5E8998" }}>
+								<b>Trabaja con Nosotros</b>
+							</Link>
+						</>
+					)}
 				</div>
 			</nav>
 		</>

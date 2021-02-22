@@ -51,7 +51,7 @@ export const Signin = () => {
 								onChange={handleChange}
 							/>
 						</div>
-						{errors.email && <p className="parrafo">{errors.email}</p>}
+						{errors.email && <h6 className="parrafo">{errors.email}</h6>}
 					</div>
 
 					<div className="form-group">
@@ -70,7 +70,7 @@ export const Signin = () => {
 								onChange={handleChange}
 							/>
 						</div>
-						{errors.password && <p className="parrafo">{errors.password}</p>}
+						{errors.password && <h6 className="parrafo">{errors.password}</h6>}
 					</div>
 					<div className="form-group" style={{ marginLeft: "100px" }}>
 						<label className="form-check-label mt-4">

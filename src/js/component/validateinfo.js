@@ -99,9 +99,9 @@ export function validateForm(values) {
 		errors.address = "Direccion no valida";
 	}
 	if (!values.comuna) {
-		errors.comuna = "Direccion es requerida";
-	} else if (!/^[a-zA-Z]+$/.test(values.comuna)) {
-		errors.comuna = "Direccion no valida";
+		errors.comuna = "Comuna es requerida";
+	} else if (!/^\w+\s?\w+?\s?$/.test(values.comuna)) {
+		errors.comuna = "Comuna no valida";
 	}
 	return errors;
 }
@@ -146,7 +146,7 @@ export function validateFormTrabajador(values) {
 	}
 	if (!values.comuna) {
 		errors.comuna = "Comuna es requerida";
-	} else if (!/^[a-zA-Z]+$/.test(values.comuna)) {
+	} else if (!/^\w+\s?\w+?\s?$/.test(values.comuna)) {
 		errors.comuna = "Comuna no valida";
 	}
 	if (!values.bank) {

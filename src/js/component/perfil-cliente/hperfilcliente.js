@@ -101,7 +101,7 @@ export const HperfilCliente = () => {
 												role="tab"
 												aria-controls="profile-reserva"
 												aria-selected="false">
-												Agenda servicio
+												Agendar nuevo servicio
 											</a>
 										</li>
 									</ul>
