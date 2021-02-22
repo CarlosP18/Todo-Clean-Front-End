@@ -89,7 +89,7 @@ const Reserva = () => {
 									<option value="6">6</option>
 								</select>
 							</div>
-						) : (
+						) : service === "Planchado" ? (
 							<>
 								<hr />
 
@@ -112,6 +112,8 @@ const Reserva = () => {
 									/>
 								</div>
 							</>
+						) : (
+							""
 						)}
 						{roomIsSel ? (
 							<>
