@@ -2,14 +2,16 @@ import React, { useContext } from "react";
 import { validateLogin } from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 
 export const Signin = () => {
 	const result = (mensaje, codigo, json) => {
 		if (codigo === 200) {
 			alert("Bienvenido " + json.user.name);
-			if (rol_id === 2) {
-				<Link path="/trabajador" />;
+			if (json.user.rol_id === 2) {
+				window.location.href = "/trabajador";
+			} else if (json.user.rol_id == 1) {
+				window.location.href = "/cliente";
 			}
 		} else {
 			alert("No fue posible registrar: " + mensaje);
