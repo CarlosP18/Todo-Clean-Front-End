@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
-import { strategy } from "webpack-merge";
 
 export const Navbar = () => {
 	return (
 		<>
-			<nav className="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+			<nav className="navbar navbar-expand-lg bg-dark text-uppercase fixed-top" id="mainNav">
 				<div className="container-fluid">
 					<Link className="navbar-brand ml-lg-5 ml-3 " to="/">
 						<img src={logo} style={{ height: "3rem" }} alt="" loading="lazy" />

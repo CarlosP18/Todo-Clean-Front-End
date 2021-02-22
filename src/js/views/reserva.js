@@ -23,13 +23,7 @@ const Reserva = () => {
 	let total =
 		(parseInt(baths) - 1) * bExtra +
 		(parseInt(rooms) - 1) * hExtra +
-		(service === "Limpieza de mantencion"
-			? mantencion
-			: service === "Planchado"
-				? planchado
-				: service === "Limpieza de vidrios"
-					? vidrios
-					: "");
+		(service === "Limpieza de mantencion" ? mantencion : service === "Limpieza de vidrios" ? vidrios : "");
 
 	return (
 		<>
@@ -66,7 +60,7 @@ const Reserva = () => {
 							</select>
 						</div>
 						<hr />
-						{serviceIsSel ? (
+						{(serviceIsSel && service === "Limpieza de mantencion") || service === "Limpieza de vidrios" ? (
 							<div className="form-check mt-3">
 								<h5>Ingresa número de habitaciones:</h5>
 								<label htmlFor="habitaciones" className="form-check-label">
@@ -96,7 +90,28 @@ const Reserva = () => {
 								</select>
 							</div>
 						) : (
-							""
+							<>
+								<hr />
+
+								<div className="form-check">
+									<label htmlFor="">
+										<i className="far fa-calendar-alt" />
+									</label>
+									<input
+										style={{
+											border: "solid 1px",
+											width: "40%",
+											marginLeft: "10px",
+											borderRadius: "4px"
+										}}
+										type="date"
+										onChange={e => {
+											setDate(e.target.value);
+											setDateIsSel(true);
+										}}
+									/>
+								</div>
+							</>
 						)}
 						{roomIsSel ? (
 							<>
@@ -206,8 +221,11 @@ const Reserva = () => {
 										</div>
 										<div className="ml-auto">
 											<b className="green">
-												$y
-												{total}
+												$
+												{service === "Limpieza de mantencion" ||
+												service === "Limpieza de vidrios"
+													? total
+													: planchado}
 											</b>
 										</div>
 									</div>
