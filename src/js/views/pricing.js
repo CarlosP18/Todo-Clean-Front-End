@@ -11,8 +11,8 @@ export const Pricing = () => {
 	const [checkout, setCheckout] = useState(false);
 
 	return (
-		<div className="container-fluid d-flex justify-content-center ">
-			<div className="panel">
+		<div className="container-fluid d-flex justify-content-center">
+			<div className="panel mt-4 mb-4">
 				<div className="pricing-plan">
 					<img src={icon1} alt="" className="pricing-img" />
 					<h2 className="pricing-header">BASICO</h2>
