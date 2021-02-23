@@ -51,7 +51,10 @@ const Reserva = () => {
 	};
 
 	const [reserva, setReserva] = useState({
-		valor: parseInt(total) ///ESTO NO FUNCIONA
+		valor: parseInt(total), ///ESTO NO FUNCIONA
+		users_id: session.id,
+		ciudad: session.ciudad,
+		address: session.comuna
 	});
 	const crearReserva = reserva => {
 		//setReserva({ ...reserva, total: total });

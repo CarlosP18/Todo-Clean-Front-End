@@ -6,6 +6,7 @@ import { AgentePreferido } from "./agentepreferidocliente";
 import { MsjCliente } from "./msjcliente";
 import { useHistory } from "react-router-dom";
 import Reserva from "../../views/reserva";
+import { Pricing } from "../../views/pricing";
 
 export const HperfilCliente = () => {
 	let user = JSON.parse(localStorage.getItem("user-info"));
@@ -112,6 +113,18 @@ export const HperfilCliente = () => {
 												Agendar nuevo servicio
 											</a>
 										</li>
+										<li className="nav-item">
+											<a
+												className="nav-link"
+												id="profile-suscripciones-tab"
+												data-toggle="tab"
+												href="#profile-suscripciones"
+												role="tab"
+												aria-controls="profile-suscripciones"
+												aria-selected="false">
+												Suscripciones
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -156,6 +169,15 @@ export const HperfilCliente = () => {
 						aria-labelledby="profile-reserva-tab">
 						<div className="col-12">
 							<Reserva />
+						</div>
+					</div>
+					<div
+						className="tab-pane fade"
+						id="profile-suscripciones"
+						role="tabpanel"
+						aria-labelledby="profile-suscripciones-tab">
+						<div className="col-12">
+							<Pricing />
 						</div>
 					</div>
 				</div>
