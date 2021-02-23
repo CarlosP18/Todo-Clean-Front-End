@@ -4,9 +4,17 @@ import { MisdatosCliente } from "./misdatoscliente";
 import { SolicitudCliente } from "./solicitudescliente";
 import { AgentePreferido } from "./agentepreferidocliente";
 import { MsjCliente } from "./msjcliente";
+import { useHistory } from "react-router-dom";
 import Reserva from "../../views/reserva";
 
 export const HperfilCliente = () => {
+	let user = JSON.parse(localStorage.getItem("user-info"));
+	const history = useHistory();
+	function Logout() {
+		localStorage.clear();
+		history.push("/login");
+		/* window.location.href = "/signin"; */
+	}
 	const storage = localStorage.getItem("session");
 	let session = {
 		name: "",
@@ -38,8 +46,8 @@ export const HperfilCliente = () => {
 												{session.name} {session.last_name}
 											</h4>
 											<p className="m-b-10">Cliente</p>
-											<a href="#" className="btn btn-sm btn-info mb-2">
-												editar perfil
+											<a onClick={Logout} href="#" className="btn btn-sm btn-info mb-2">
+												Logout
 											</a>
 										</div>
 									</div>

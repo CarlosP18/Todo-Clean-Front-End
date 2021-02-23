@@ -46,6 +46,7 @@ export const HperfilTrabajador = () => {
 												{session.name} {session.last_name}
 											</h4>
 											<p className="m-b-10">Trabajador</p>
+
 											<button onClick={Logout} href="#" className="btn btn-sm btn-info mb-2">
 												Logout
 											</button>
