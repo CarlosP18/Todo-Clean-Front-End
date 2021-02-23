@@ -54,7 +54,8 @@ const Reserva = () => {
 		valor: parseInt(total), ///ESTO NO FUNCIONA
 		users_id: session.id,
 		ciudad: session.ciudad,
-		address: session.comuna
+		address: session.address,
+		comuna: session.comuna
 	});
 	const crearReserva = reserva => {
 		//setReserva({ ...reserva, total: total });
