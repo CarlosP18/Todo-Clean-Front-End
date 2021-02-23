@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useForm = (callback, validate, datos, endpoint, method) => {
+const useForm = (callback, validate, datos, endpoint, method, setAuth = null) => {
 	const [values, setValues] = useState(datos); //valores de los formularios
 	const [errors, setErrors] = useState({}); //erroes de validacion en el caso que existan
 	const [isSubmitting, setIsSubmitting] = useState(false); //estado de envios de formularios, si el formulario se esta enviadno quedaria en tru
@@ -47,6 +47,7 @@ const useForm = (callback, validate, datos, endpoint, method) => {
 				// si tiene que guardar sesion, se debe utilizar los sguientes endpoints
 				if (endpoint === "user/signup" || endpoint === "user/signin" || endpoint === "user/signup-trabajador") {
 					if (parseInt(res.response.status) === 200) {
+						setAuth(true);
 						localStorage.setItem("session", JSON.stringify(res.json)); //almacena json en sesion
 					}
 				}

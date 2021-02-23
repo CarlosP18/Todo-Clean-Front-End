@@ -95,7 +95,7 @@ export function validateForm(values) {
 	}
 	if (!values.address) {
 		errors.address = "Direccion es requerida";
-	} else if (!/^[a-zA-Z]+$/.test(values.address)) {
+	} else if (!/^[a-zA-Z\s]+[0-9]/.test(values.address)) {
 		errors.address = "Direccion no valida";
 	}
 	if (!values.comuna) {

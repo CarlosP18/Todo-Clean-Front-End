@@ -3,20 +3,25 @@ import { validateLogin } from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
 import { Link, Redirect, useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Signin = () => {
+	const history = useHistory();
 	const result = (mensaje, codigo, json) => {
 		if (codigo === 200) {
 			alert("Bienvenido " + json.user.name);
 			if (json.user.rol_id === 2) {
-				window.location.href = "/trabajador";
+				history.push("/trabajador");
 			} else if (json.user.rol_id == 1) {
-				window.location.href = "/cliente";
+				history.push("/cliente");
 			}
 		} else {
 			alert("No fue posible registrar: " + mensaje);
 		}
 	};
+	const {
+		actions: { setAuth }
+	} = useContext(Context);
 
 	const { handleSubmit, handleChange, values, errors } = useForm(
 		result,
@@ -26,7 +31,8 @@ export const Signin = () => {
 			password: ""
 		},
 		"user/signin",
-		"POST"
+		"POST",
+		setAuth
 	);
 
 	return (

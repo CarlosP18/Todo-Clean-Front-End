@@ -328,7 +328,10 @@ const Reserva = () => {
 								{checkout ? (
 									<Paypal />
 								) : (
-									<button className="btn btn-primary btn-lg mt-5" type="submit">
+									<button
+										onClick={() => setReserva({ ...reserva, valor: total })}
+										className="btn btn-primary btn-lg mt-5"
+										type="submit">
 										Reservar y Pagar
 									</button>
 								)}{" "}

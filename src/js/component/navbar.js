@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../img/logo.png";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store } = useContext(Context);
+
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg bg-dark text-uppercase fixed-top" id="mainNav">
 				<div className="container-fluid">
-					{localStorage.getItem("session") ? (
+					{store.auth === true ? (
 						<>
 							<Link className="navbar-brand  " to="/">
 								<img src={logo} style={{ height: "3rem" }} alt="" loading="lazy" />
