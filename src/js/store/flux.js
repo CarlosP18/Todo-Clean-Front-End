@@ -7,7 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				vidrios: 20000,
 				habitacionExtra: 5000,
 				banoExtra: 6000
-			}
+			},
+			auth: false
 		},
 		actions: {
 			submitForm: user => {
@@ -29,6 +30,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			register_user: values => {
 				setStore({ user: getStore().user.concat(values) });
+			},
+
+			setAuth: valor => {
+				setStore({ auth: valor });
 			}
 		}
 	};

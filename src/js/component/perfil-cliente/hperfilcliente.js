@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../../styles/HperfilCliente.scss";
 import { MisdatosCliente } from "./misdatoscliente";
 import { SolicitudCliente } from "./solicitudescliente";
@@ -7,12 +7,18 @@ import { MsjCliente } from "./msjcliente";
 import { useHistory } from "react-router-dom";
 import Reserva from "../../views/reserva";
 import { Pricing } from "../../views/pricing";
+import { Context } from "../../store/appContext";
 
 export const HperfilCliente = () => {
-	let user = JSON.parse(localStorage.getItem("user-info"));
+	/* let user = JSON.parse(localStorage.getItem("user-info")); */
+	const {
+		actions: { setAuth }
+	} = useContext(Context);
+
 	const history = useHistory();
 	function Logout() {
 		localStorage.clear();
+		setAuth(false);
 		history.push("/login");
 		/* window.location.href = "/signin"; */
 	}
@@ -47,9 +53,9 @@ export const HperfilCliente = () => {
 												{session.name} {session.last_name}
 											</h4>
 											<p className="m-b-10">Cliente</p>
-											<a onClick={Logout} href="#" className="btn btn-sm btn-info mb-2">
+											<button onClick={Logout} className="btn btn-sm btn-info mb-2">
 												Logout
-											</a>
+											</button>
 										</div>
 									</div>
 									<ul className="profile-header-tab nav nav-tabs" id="mytab" role="tablist">
