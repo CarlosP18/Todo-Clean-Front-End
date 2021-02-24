@@ -1,6 +1,6 @@
 import React from "react";
 import mainImg from "../../img/mainImg.jpeg";
-import logo from "../../img/logo.png";
+import logo7 from "../../img/logo7.png";
 import "../../styles/home.scss";
 
 export const Home = () => (
@@ -8,12 +8,12 @@ export const Home = () => (
 		id="containerHome"
 		className="ml-2"
 		style={{ width: "100%", backgroundColor: "white", padding: "0", margin: "0" }}>
-		<div className="firstImg row justify-content-center " style={{ width: "100%" }}>
+		<div className="firstImg row justify-content-center " style={{ width: "100%", height: "60vh" }}>
 			<img
 				className="img-fluid m-3 mt-5"
-				src={logo}
+				src={logo7}
 				style={{
-					width: "50%"
+					width: "100%"
 				}}
 			/>
 		</div>

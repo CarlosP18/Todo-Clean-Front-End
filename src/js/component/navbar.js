@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import "../../styles/navbar.scss";
 import logo from "../../img/logo.png";
 import { Context } from "../store/appContext";
 
@@ -14,13 +14,13 @@ export const Navbar = () => {
 					{store.auth === true ? (
 						<>
 							<Link className="navbar-brand  " to="/">
-								<img src={logo} style={{ height: "3rem" }} alt="" loading="lazy" />
+								<img src={logo} style={{ height: "2.5rem" }} alt="" loading="lazy" />
 							</Link>
 						</>
 					) : (
 						<>
 							<Link className="navbar-brand  " to="/">
-								<img src={logo} style={{ height: "3rem" }} alt="" loading="lazy" />
+								<img src={logo} style={{ height: "2.5rem", marginTop: "none" }} alt="" loading="lazy" />
 							</Link>
 
 							<button
@@ -34,37 +34,37 @@ export const Navbar = () => {
 								<i className="fas fa-bars" />
 							</button>
 							<div className="collapse navbar-collapse" id="navbarResponsive">
-								<ul className="navbar-nav ml-auto">
+								<ul className="navbar-nav ml-auto" style={{ fontSize: "13px" }}>
 									<li className="nav-item py-3 mx-0 mx-lg-1">
 										<Link className="text-white" to="/ayuda">
-											<b>AYUDA!</b>
+											<b className="ayuda">AYUDA!</b>
 										</Link>
 									</li>
 									<li className="nav-item mx-0 mx-lg-1">
 										<Link
 											to="/login"
-											className=" login-signup btn text-white my-2 "
+											className=" login-signup btn text-white my-2"
 											type="submit"
 											style={{ backgroundColor: "#43DEBE" }}>
-											<b>Login</b>
+											<b className="boton">Login</b>
 										</Link>
 									</li>
 									<li className="nav-item mx-0 mx-lg-1">
 										<Link
 											to="/signup"
-											className=" login-signup btn text-white my-2 mr-2"
+											className=" login-signup btn text-white my-2"
 											type="submit"
 											style={{ backgroundColor: "#43DEBE" }}>
-											<b>Registrate</b>
+											<b className="boton">Registrate</b>
 										</Link>
 									</li>
 									<li className="nav-item mx-0  mx-lg-1 ">
 										<Link
 											to="/signuptrabajador"
-											className=" login-signup btn text-white my-2 mr-0 "
+											className=" login-signup btn text-white my-2"
 											type="submit"
 											style={{ backgroundColor: "#5E8998" }}>
-											<b>Trabaja con Nosotros</b>
+											<b className="boton">Trabaja con Nosotros</b>
 										</Link>
 									</li>
 								</ul>
