@@ -84,7 +84,7 @@ export const Signin = () => {
 						</label>
 					</div>
 					<div className="text-center mb-2">
-						<Link className="text-center" to="">
+						<Link className="text-center" to="/contraseña1">
 							¿Olvidaste tu contraseña?
 						</Link>
 					</div>
