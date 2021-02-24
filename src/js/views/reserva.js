@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Paypal } from "../component/Paypal";
 import "../../styles/reserva.scss";
+import { createCustomTheme } from "@mobiscroll/react";
 
 const Reserva = () => {
 	const [checkout, setCheckout] = useState(false);
@@ -19,6 +20,10 @@ const Reserva = () => {
 	let mantencion = store.precios.mantencion;
 	let planchado = store.precios.planchado;
 	let vidrios = store.precios.vidrios;
+
+	useEffect(() => {
+		getTrabajadores();
+	}, []);
 
 	let total =
 		(parseInt(baths) - 1) * bExtra +
@@ -72,14 +77,18 @@ const Reserva = () => {
 				setCheckout(true);
 			});
 	};
-
-	/* 	const handleChange = e => {
-		//cuando cambia el valor de input se cambia a values
-		setReserva({
-			...reserva,
-			[e.target.name]: e.target.value
-		});
-	}; */
+	/// GET trabajador //
+	const [trabajador, setTrabajador] = useState(null);
+	const getTrabajadores = async () => {
+		try {
+			const resp = await fetch("http://localhost:4000/clientes");
+			const data = await resp.json();
+			console.log(data);
+			setTrabajador(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	return (
 		<>
@@ -335,6 +344,20 @@ const Reserva = () => {
 										Reservar y Pagar
 									</button>
 								)}{" "}
+								<label htmlFor="trabajador">Trabajador</label>
+								<select name="trabajador" value="">
+								<option selected /> 
+									{!!trabajador &&
+										trabajador.map((dato, index) => {
+											if (dato.rol_id === 2 && dato.comuna === session.comuna)
+												return (
+													
+													<option>
+														{dato.name} {dato.last_name}
+													</option>
+												);
+										})}
+								</select>
 							</div>
 						</div>
 					</div>
