@@ -19,7 +19,7 @@ export const Contraseña1 = () => {
 		//setReserva({ ...reserva, total: total });
 		fetch("http://localhost:4000/reset-password-request", {
 			method: "POST",
-			body: JSON.stringify(email),
+			body: JSON.stringify(),
 			headers: {
 				"Content-Type": "application/json"
 			}
