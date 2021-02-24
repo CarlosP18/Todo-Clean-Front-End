@@ -15,6 +15,7 @@ const Reserva = () => {
 	const [roomIsSel, setRoomIsSel] = useState(false);
 	const [bathIsSel, setBathIsSel] = useState(false);
 	const [dateIsSel, setDateIsSel] = useState(false);
+	const [trabIsSel, setTrabIsSel] = useState(false);
 	let hExtra = store.precios.habitacionExtra;
 	let bExtra = store.precios.banoExtra;
 	let mantencion = store.precios.mantencion;
@@ -179,7 +180,8 @@ const Reserva = () => {
 								<>
 									<hr />
 
-									<div className="form-check">
+									<div className="form-check mt-3">
+										<h5>Ingresa la fecha:</h5>
 										<label htmlFor="fecha_parareserva">
 											<i className="far fa-calendar-alt" />
 										</label>
@@ -248,7 +250,8 @@ const Reserva = () => {
 								<>
 									<hr />
 
-									<div className="form-check">
+									<div className="form-check mt-3">
+										<h5>Ingresa la fecha:</h5>
 										<label htmlFor="fecha_parareserva">
 											<i className="far fa-calendar-alt" />
 										</label>
@@ -270,6 +273,44 @@ const Reserva = () => {
 												});
 											}}
 										/>
+									</div>
+								</>
+							) : (
+								""
+							)}
+
+							{dateIsSel ? (
+								<>
+									<hr />
+
+									<div className="form-check mt-3">
+										<h5>Selecciona un cleaner:</h5>
+										<select
+											name="trab_id"
+											value=""
+											onChange={e => {
+												setReserva({
+													...reserva,
+													[e.target.name]: e.target.value
+												});
+											}}>
+											<option selected>Seleccione </option>
+											{!!trabajador &&
+												trabajador
+													.filter(dato => {
+														return (
+															(dato.rol_id === 2 && dato.comuna === session.comuna) ||
+															(dato.rol_id === 2 && dato.comuna !== session.comuna)
+														);
+													})
+													.map((dato, index) => {
+														return (
+															<option value={dato.id} key={index}>
+																{dato.name} {dato.last_name}
+															</option>
+														);
+													})}
+										</select>
 									</div>
 								</>
 							) : (
@@ -344,20 +385,6 @@ const Reserva = () => {
 										Reservar y Pagar
 									</button>
 								)}{" "}
-								<label htmlFor="trabajador">Trabajador</label>
-								<select name="trabajador" value="">
-								<option selected /> 
-									{!!trabajador &&
-										trabajador.map((dato, index) => {
-											if (dato.rol_id === 2 && dato.comuna === session.comuna)
-												return (
-													
-													<option>
-														{dato.name} {dato.last_name}
-													</option>
-												);
-										})}
-								</select>
 							</div>
 						</div>
 					</div>
