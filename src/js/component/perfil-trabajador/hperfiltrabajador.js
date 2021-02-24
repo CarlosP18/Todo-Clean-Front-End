@@ -5,8 +5,16 @@ import { MsjTrabajador } from "./msgtrabajador";
 import { Calendar } from "../calendar";
 import InicioLabores from "./iniciodelabores";
 import Informe from "../../views/informe";
+import { useHistory } from "react-router-dom";
 
 export const HperfilTrabajador = () => {
+	let user = JSON.parse(localStorage.getItem("user-info"));
+	const history = useHistory();
+	function Logout() {
+		localStorage.clear();
+		history.push("/login");
+		/* window.location.href = "/signin"; */
+	}
 	const storage = localStorage.getItem("session");
 	let session = {
 		name: "",
@@ -38,9 +46,10 @@ export const HperfilTrabajador = () => {
 												{session.name} {session.last_name}
 											</h4>
 											<p className="m-b-10">Trabajador</p>
-											<a href="#" className="btn btn-sm btn-info mb-2">
-												ver más
-											</a>
+
+											<button onClick={Logout} href="#" className="btn btn-sm btn-info mb-2">
+												Logout
+											</button>
 										</div>
 									</div>
 									<ul className="profile-header-tab nav nav-tabs" id="mytab" role="tablist">

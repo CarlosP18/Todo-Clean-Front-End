@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../../styles/HperfilCliente.scss";
 import { MisdatosCliente } from "./misdatoscliente";
 import { SolicitudCliente } from "./solicitudescliente";
 import { AgentePreferido } from "./agentepreferidocliente";
 import { MsjCliente } from "./msjcliente";
+import { useHistory } from "react-router-dom";
 import Reserva from "../../views/reserva";
+import { Pricing } from "../../views/pricing";
+import { Context } from "../../store/appContext";
 
 export const HperfilCliente = () => {
+	/* let user = JSON.parse(localStorage.getItem("user-info")); */
+	const {
+		actions: { setAuth }
+	} = useContext(Context);
+
+	const history = useHistory();
+	function Logout() {
+		localStorage.clear();
+		setAuth(false);
+		history.push("/login");
+		/* window.location.href = "/signin"; */
+	}
 	const storage = localStorage.getItem("session");
 	let session = {
 		name: "",
@@ -38,9 +53,9 @@ export const HperfilCliente = () => {
 												{session.name} {session.last_name}
 											</h4>
 											<p className="m-b-10">Cliente</p>
-											<a href="#" className="btn btn-sm btn-info mb-2">
-												editar perfil
-											</a>
+											<button onClick={Logout} className="btn btn-sm btn-info mb-2">
+												Logout
+											</button>
 										</div>
 									</div>
 									<ul className="profile-header-tab nav nav-tabs" id="mytab" role="tablist">
@@ -101,7 +116,19 @@ export const HperfilCliente = () => {
 												role="tab"
 												aria-controls="profile-reserva"
 												aria-selected="false">
-												Agenda servicio
+												Agendar nuevo servicio
+											</a>
+										</li>
+										<li className="nav-item">
+											<a
+												className="nav-link"
+												id="profile-suscripciones-tab"
+												data-toggle="tab"
+												href="#profile-suscripciones"
+												role="tab"
+												aria-controls="profile-suscripciones"
+												aria-selected="false">
+												Suscripciones
 											</a>
 										</li>
 									</ul>
@@ -148,6 +175,15 @@ export const HperfilCliente = () => {
 						aria-labelledby="profile-reserva-tab">
 						<div className="col-12">
 							<Reserva />
+						</div>
+					</div>
+					<div
+						className="tab-pane fade"
+						id="profile-suscripciones"
+						role="tabpanel"
+						aria-labelledby="profile-suscripciones-tab">
+						<div className="col-12">
+							<Pricing />
 						</div>
 					</div>
 				</div>

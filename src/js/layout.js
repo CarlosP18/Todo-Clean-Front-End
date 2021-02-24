@@ -18,6 +18,8 @@ import { PerfilTrabajor } from "./views/perfilTrabajador";
 import Ayuda from "./views/ayuda";
 import { Informe } from "./views/informe";
 import Form from "../js/views/form";
+import { Contraseña1 } from "./component/contraseña1";
+import { Contraseña2 } from "./component/contraseña2";
 
 //create your first component
 const Layout = () => {
@@ -57,6 +59,12 @@ const Layout = () => {
 
 					<Route exact path="/cliente">
 						<PerfilCliente />
+					</Route>
+					<Route exact path="/contraseña1">
+						<Contraseña1 />
+					</Route>
+					<Route exact path="/contraseña2">
+						<Contraseña2 />
 					</Route>
 					<Route>
 						<Informe />

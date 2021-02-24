@@ -3,20 +3,25 @@ import { validateLogin } from "../component/validateinfo";
 import useForm from "../component/useform";
 import "../../styles/signup.scss";
 import { Link, Redirect, useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Signin = () => {
+	const history = useHistory();
 	const result = (mensaje, codigo, json) => {
 		if (codigo === 200) {
 			alert("Bienvenido " + json.user.name);
 			if (json.user.rol_id === 2) {
-				window.location.href = "/trabajador";
+				history.push("/trabajador");
 			} else if (json.user.rol_id == 1) {
-				window.location.href = "/cliente";
+				history.push("/cliente");
 			}
 		} else {
 			alert("No fue posible registrar: " + mensaje);
 		}
 	};
+	const {
+		actions: { setAuth }
+	} = useContext(Context);
 
 	const { handleSubmit, handleChange, values, errors } = useForm(
 		result,
@@ -26,7 +31,8 @@ export const Signin = () => {
 			password: ""
 		},
 		"user/signin",
-		"POST"
+		"POST",
+		setAuth
 	);
 
 	return (
@@ -51,7 +57,7 @@ export const Signin = () => {
 								onChange={handleChange}
 							/>
 						</div>
-						{errors.email && <p className="parrafo">{errors.email}</p>}
+						{errors.email && <h6 className="parrafo">{errors.email}</h6>}
 					</div>
 
 					<div className="form-group">
@@ -70,7 +76,7 @@ export const Signin = () => {
 								onChange={handleChange}
 							/>
 						</div>
-						{errors.password && <p className="parrafo">{errors.password}</p>}
+						{errors.password && <h6 className="parrafo">{errors.password}</h6>}
 					</div>
 					<div className="form-group" style={{ marginLeft: "100px" }}>
 						<label className="form-check-label mt-4">
@@ -78,7 +84,7 @@ export const Signin = () => {
 						</label>
 					</div>
 					<div className="text-center mb-2">
-						<Link className="text-center" to="">
+						<Link className="text-center" to="/contraseña1">
 							¿Olvidaste tu contraseña?
 						</Link>
 					</div>
