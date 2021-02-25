@@ -287,14 +287,16 @@ const Reserva = () => {
 										<h5>Selecciona un cleaner:</h5>
 										<select
 											name="trab_id"
-											value=""
+											value={reserva.trab_id}
 											onChange={e => {
 												setReserva({
 													...reserva,
 													[e.target.name]: e.target.value
 												});
 											}}>
-											<option selected>Seleccione </option>
+											<option value="" selected>
+												Seleccione{" "}
+											</option>
 											{!!trabajador &&
 												trabajador
 													.filter(dato => {
