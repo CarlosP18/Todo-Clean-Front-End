@@ -4,8 +4,12 @@ import logo7 from "../../img/logo7.png";
 import "../../styles/home.scss";
 
 export const Home = () => (
-	<div id="containerHomer" className="container-fluid   mt-5" style={{ width: "100%" }}>
-		<div className="firstImg row justify-content-center   mt-5" style={{ height: "100%" }}>
+
+	<div
+		id="containerHome"
+		className="ml-2"
+		style={{ width: "100%", backgroundColor: "white", padding: "0", margin: "0" }}>
+		<div className="firstImg row justify-content-center " style={{ width: "100%", height: "60%" }}>
 			<img
 				className="img-fluid m-3 mt-5"
 				src={logo7}
