@@ -1,10 +1,10 @@
 import React from "react";
-import { validateInfo } from "../component/validateinfo";
-import useForm from "../component/useform";
+import { validateInfo } from "./validateinfo";
+import useForm from "./useform";
 import "../../styles/signup.scss";
 import { Link } from "react-router-dom";
 
-export const Contraseña2 = () => {
+export const Contrasena2 = () => {
 	const result = (mensaje, codigo, response) => {
 		if (codigo === 200) {
 			alert(mensaje);

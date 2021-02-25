@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Paypal } from "../component/Paypal";
 import "../../styles/reserva.scss";
+import { WindowScrollController } from "@fullcalendar/core";
 import { createCustomTheme } from "@mobiscroll/react";
 
 const Reserva = () => {
@@ -285,6 +286,7 @@ const Reserva = () => {
 										{dateIsSel ? (
 											<>
 												<hr />
+
 
 												<div className="form-check mt-3">
 													<h5>Selecciona un cleaner:</h5>
