@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { validateInfo } from "./validateinfo";
-import useForm from "./useform";
+import { validateInfo } from "../component/validateinfo";
+import useForm from "../component/useform";
 import "../../styles/signup.scss";
 import { Link } from "react-router-dom";
 
-export const Contrasena1 = () => {
+export const Contraseña1 = () => {
 	const result = (mensaje, codigo, response) => {
 		if (codigo === 200) {
 			alert(mensaje);
@@ -19,7 +19,7 @@ export const Contrasena1 = () => {
 		//setReserva({ ...reserva, total: total });
 		fetch("http://localhost:4000/reset-password-request", {
 			method: "POST",
-			body: JSON.stringify(email),
+			body: JSON.stringify(),
 			headers: {
 				"Content-Type": "application/json"
 			}
@@ -32,7 +32,6 @@ export const Contrasena1 = () => {
 
 	/* 	const { handleSubmit, handleChange, values, errors } = useForm(
 		result,
-
 		{
 			email: ""
 		},
