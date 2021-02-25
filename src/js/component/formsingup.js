@@ -1,7 +1,9 @@
 import React from "react";
 import { validateInfo } from "../component/validateinfo";
 import useForm from "../component/useform";
+
 import "../../styles/signup.scss";
+import { useHistory } from "react-router-dom";
 
 const FormSignup = submitForm => {
 	const history = useHistory();
@@ -34,7 +36,7 @@ const FormSignup = submitForm => {
 	);
 
 	return (
-		<div className="container-fluid containerForm">
+		<div className="container-form2 containerForm">
 			<div className="signup-form ">
 				<form onSubmit={handleSubmit} className="form" noValidate>
 					<h2 className="text-center mb-4">Trabaja con nosotros!</h2>
@@ -166,12 +168,12 @@ const FormSignup = submitForm => {
 						</div>
 						{errors.password2 && <p className="parrafo">{errors.password2}</p>}
 					</div>
-					<div className="form-group">
+					{/* <div className="form-group">
 						<label className="form-check-label mt-4">
 							<input type="checkbox" required="required" /> He leido y acepto los{" "}
 							<a href="#">Terminos y condiciones</a>
 						</label>
-					</div>
+					</div> */}
 					<div className="form-group d-flex justify-content-center">
 						<button type="submit" className="btn btn-primary btn-lg">
 							Registrar

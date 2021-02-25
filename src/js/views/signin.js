@@ -78,12 +78,12 @@ export const Signin = () => {
 						</div>
 						{errors.password && <h6 className="parrafo">{errors.password}</h6>}
 					</div>
-					<div className="form-group" style={{ marginLeft: "100px" }}>
+					{/* 					<div className="form-group" style={{ marginLeft: "100px" }}>
 						<label className="form-check-label mt-4">
 							<input type="checkbox" required="required" /> Recordar usurario
 						</label>
-					</div>
-					<div className="text-center mb-2">
+					</div> */}
+					<div className="text-center  mt-4">
 						<Link className="text-center" to="/contraseña1">
 							¿Olvidaste tu contraseña?
 						</Link>
@@ -93,7 +93,7 @@ export const Signin = () => {
 							Ingresar
 						</button>
 					</div>
-					<div className="text-center mt-5">
+					<div className="text-center mt-2">
 						<p className="mb-0">¿No estas registrado?</p>
 						<Link className="text-center mt-0" to="/signup">
 							Registrate aqui!
