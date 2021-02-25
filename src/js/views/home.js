@@ -4,7 +4,6 @@ import logo7 from "../../img/logo7.png";
 import "../../styles/home.scss";
 
 export const Home = () => (
-
 	<div
 		id="containerHome"
 		className="ml-2"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../../styles/HperfilCliente.scss";
 import { ServiciosRealizados } from "./serviciosRealizados";
 import { MsjTrabajador } from "./msgtrabajador";
@@ -6,12 +6,17 @@ import { Calendar } from "../calendar";
 import InicioLabores from "./iniciodelabores";
 import Informe from "../../views/informe";
 import { useHistory } from "react-router-dom";
+import { Context } from "../../store/appContext";
 
 export const HperfilTrabajador = () => {
-	let user = JSON.parse(localStorage.getItem("user-info"));
+	const {
+		actions: { setAuth }
+	} = useContext(Context);
+
 	const history = useHistory();
 	function Logout() {
 		localStorage.clear();
+		setAuth(false);
 		history.push("/login");
 		/* window.location.href = "/signin"; */
 	}
