@@ -4,10 +4,15 @@ import useForm from "../component/useform";
 import "../../styles/signup.scss";
 
 const FormSignup = submitForm => {
-	const result = (mensaje, codigo, response) => {
+	const history = useHistory();
+	const result = (mensaje, codigo, json) => {
 		if (codigo === 200) {
-			alert(mensaje);
-			//redireccionar al login
+			alert("Registro Exitoso");
+			if (json.user.rol_id === 2) {
+				history.push("/login");
+			} else if (json.user.rol_id == 1) {
+				history.push("/login");
+			}
 		} else {
 			alert("No fue posible registrar: " + mensaje);
 		}
