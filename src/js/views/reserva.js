@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Paypal } from "../component/Paypal";
 import "../../styles/reserva.scss";
 import { WindowScrollController } from "@fullcalendar/core";
+import { createCustomTheme } from "@mobiscroll/react";
 
 const Reserva = () => {
 	const [checkout, setCheckout] = useState(false);
@@ -15,11 +16,16 @@ const Reserva = () => {
 	const [roomIsSel, setRoomIsSel] = useState(false);
 	const [bathIsSel, setBathIsSel] = useState(false);
 	const [dateIsSel, setDateIsSel] = useState(false);
+	const [trabIsSel, setTrabIsSel] = useState(false);
 	let hExtra = store.precios.habitacionExtra;
 	let bExtra = store.precios.banoExtra;
 	let mantencion = store.precios.mantencion;
 	let planchado = store.precios.planchado;
 	let vidrios = store.precios.vidrios;
+
+	useEffect(() => {
+		getTrabajadores();
+	}, []);
 
 	let total =
 		(parseInt(baths) - 1) * bExtra +
@@ -73,14 +79,18 @@ const Reserva = () => {
 				setCheckout(true);
 			});
 	};
-
-	/* 	const handleChange = e => {
-		//cuando cambia el valor de input se cambia a values
-		setReserva({
-			...reserva,
-			[e.target.name]: e.target.value
-		});
-	}; */
+	/// GET trabajador //
+	const [trabajador, setTrabajador] = useState(null);
+	const getTrabajadores = async () => {
+		try {
+			const resp = await fetch("http://localhost:4000/clientes");
+			const data = await resp.json();
+			console.log(data);
+			setTrabajador(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	return (
 		<>
@@ -171,7 +181,8 @@ const Reserva = () => {
 								<>
 									<hr />
 
-									<div className="form-check">
+									<div className="form-check mt-3">
+										<h5>Ingresa la fecha:</h5>
 										<label htmlFor="fecha_parareserva">
 											<i className="far fa-calendar-alt" />
 										</label>
@@ -240,7 +251,8 @@ const Reserva = () => {
 								<>
 									<hr />
 
-									<div className="form-check">
+									<div className="form-check mt-3">
+										<h5>Ingresa la fecha:</h5>
 										<label htmlFor="fecha_parareserva">
 											<i className="far fa-calendar-alt" />
 										</label>
@@ -262,6 +274,46 @@ const Reserva = () => {
 												});
 											}}
 										/>
+									</div>
+								</>
+							) : (
+								""
+							)}
+
+							{dateIsSel ? (
+								<>
+									<hr />
+
+									<div className="form-check mt-3">
+										<h5>Selecciona un cleaner:</h5>
+										<select
+											name="trab_id"
+											value={reserva.trab_id}
+											onChange={e => {
+												setReserva({
+													...reserva,
+													[e.target.name]: e.target.value
+												});
+											}}>
+											<option value="" selected>
+												Seleccione{" "}
+											</option>
+											{!!trabajador &&
+												trabajador
+													.filter(dato => {
+														return (
+															(dato.rol_id === 2 && dato.comuna === session.comuna) ||
+															(dato.rol_id === 2 && dato.comuna !== session.comuna)
+														);
+													})
+													.map((dato, index) => {
+														return (
+															<option value={dato.id} key={index}>
+																{dato.name} {dato.last_name}
+															</option>
+														);
+													})}
+										</select>
 									</div>
 								</>
 							) : (
@@ -330,9 +382,9 @@ const Reserva = () => {
 									<Paypal />
 								) : (
 									<button
-										onClick={() => setReserva({ ...reserva, valor: total })}
 										className="btn btn-primary btn-lg mt-5"
-										type="submit">
+										type="submit"
+										onClick={() => setReserva({ ...reserva, valor: total })}>
 										Reservar y Pagar
 									</button>
 								)}{" "}
