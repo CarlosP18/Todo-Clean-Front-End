@@ -5,25 +5,10 @@ import { Eventcalendar, toast, localeEs } from "@mobiscroll/react";
 const now = new Date();
 const myEvents = [
 	{
-		start: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 14),
-		end: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 16),
-		title: "Limpieza Mantencion",
-		color: "#43DEBE",
-		location: "Cliente: Andrea Bravo - Santo domingo 1475, Santiago"
-	},
-	{
-		start: new Date(now.getFullYear(), now.getMonth(), 19, 14),
-		end: new Date(now.getFullYear(), now.getMonth(), 19, 16),
-		title: "Limpieza Mantencion",
-		color: "#43DEBE",
-		location: "Cliente: Juan Jimenez - Av Francisco Bilbao 4563, Providencia"
-	},
-	{
-		start: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9),
-		end: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12),
-		title: "Planchado",
-		color: "#43DEBE",
-		location: " Cliente: Jose Perez - Direccion: Av Las Condes 3326, Las Condes"
+		start: new Date(now.getFullYear(), 3, 1, 10),
+		title: "Limpieza Mantencion, 3D 2B",
+		color: "#CDA3AE",
+		location: "Cliente: Carlos Plaza - Ariosto 7256, La Reina"
 	}
 ];
 

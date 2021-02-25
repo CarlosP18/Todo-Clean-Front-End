@@ -287,7 +287,6 @@ const Reserva = () => {
 											<>
 												<hr />
 
-
 												<div className="form-check mt-3">
 													<h5>Selecciona un cleaner:</h5>
 													<i className="icon fas fa-hand-sparkles" />

@@ -11,213 +11,30 @@ export const ServiciosRealizados = () => {
 						<div className="table-responsive">
 							<table id="mytable" className="table table-bordred table-striped">
 								<thead>
-									<th>
-										<input type="checkbox" id="checkall" />
-									</th>
 									<th>Tipo de subscripcion</th>
-									<th>fecha</th>
-									<th>nombre de cliente</th>
-									<th>Monto</th>
-									<th>trabajo realiazo</th>
-									<th>cancelar solicidud</th>
+									<th>Fecha</th>
+									<th>Nombre de cliente</th>
+									<th>Direccion</th>
+									<th>Comuna</th>
 								</thead>
 								<tbody>
 									<tr>
-										<td>
-											<input type="checkbox" className="checkthis" />
-										</td>
-										<td>Premium</td>
-										<td>03/12/2018</td>
-										<td>Rosita Nieves</td>
-										<td>$40.000</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Edit">
-												<button
-													className="btn btn-primary btn-xs"
-													data-title="Edit"
-													data-toggle="modal"
-													data-target="#edit">
-													<span className="glyphicon glyphicon-pencil" />
-													<i className="fas fa-check" />
-												</button>
-											</p>
-										</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Delete">
-												<button
-													className="btn btn-danger btn-xs"
-													data-title="Delete"
-													data-toggle="modal"
-													data-target="#delete">
-													<span className="glyphicon glyphicon-trash" />
-													<i className="fas fa-trash-alt" />
-												</button>
-											</p>
-										</td>
+										<td>Basico</td>
+										<td>01/04/2021</td>
+										<td>Carlos Plaza</td>
+										<td>Ariosto 7256</td>
+										<td>La Reina</td>
 									</tr>
 									<tr>
-										<td>
-											<input type="checkbox" className="checkthis" />
-										</td>
-										<td>Premium</td>
-										<td>03/12/2018</td>
+										<td>Basico</td>
+										<td>15/02/2021</td>
 										<td>Rosita Nieves</td>
-										<td>$40.000</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Edit">
-												<button
-													className="btn btn-primary btn-xs"
-													data-title="Edit"
-													data-toggle="modal"
-													data-target="#edit">
-													<span className="glyphicon glyphicon-pencil" />
-													<i className="fas fa-check" />
-												</button>
-											</p>
-										</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Delete">
-												<button
-													className="btn btn-danger btn-xs"
-													data-title="Delete"
-													data-toggle="modal"
-													data-target="#delete">
-													<span className="glyphicon glyphicon-trash" />
-													<i className="fas fa-trash-alt" />
-												</button>
-											</p>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" className="checkthis" />
-										</td>
-										<td>Premium</td>
-										<td>03/12/2018</td>
-										<td>Rosita Nieves</td>
-										<td>$40.000</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Edit">
-												<button
-													className="btn btn-primary btn-xs"
-													data-title="Edit"
-													data-toggle="modal"
-													data-target="#edit">
-													<span className="glyphicon glyphicon-pencil" />
-													<i className="fas fa-check" />
-												</button>
-											</p>
-										</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Delete">
-												<button
-													className="btn btn-danger btn-xs"
-													data-title="Delete"
-													data-toggle="modal"
-													data-target="#delete">
-													<span className="glyphicon glyphicon-trash" />
-													<i className="fas fa-trash-alt" />
-												</button>
-											</p>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" className="checkthis" />
-										</td>
-										<td>Premium</td>
-										<td>03/12/2018</td>
-										<td>Rosita Nieves</td>
-
-										<td>$40.000</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Edit">
-												<button
-													className="btn btn-primary btn-xs"
-													data-title="Edit"
-													data-toggle="modal"
-													data-target="#edit">
-													<span className="glyphicon glyphicon-pencil" />
-													<i className="fas fa-check" />
-												</button>
-											</p>
-										</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Delete">
-												<button
-													className="btn btn-danger btn-xs"
-													data-title="Delete"
-													data-toggle="modal"
-													data-target="#delete">
-													<span className="glyphicon glyphicon-trash" />
-													<i className="fas fa-trash-alt" />
-												</button>
-											</p>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" className="checkthis" />
-										</td>
-										<td>Premium</td>
-										<td>03/12/2018</td>
-										<td>Rosita Nieves</td>
-										<td>$40.000</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Edit">
-												<button
-													className="btn btn-primary btn-xs"
-													data-title="Edit"
-													data-toggle="modal"
-													data-target="#edit">
-													<span className="glyphicon glyphicon-pencil" />
-													<i className="fas fa-check" />
-												</button>
-											</p>
-										</td>
-										<td>
-											<p data-placement="top" data-toggle="tooltip" title="Delete">
-												<button
-													className="btn btn-danger btn-xs"
-													data-title="Delete"
-													data-toggle="modal"
-													data-target="#delete">
-													<span className="glyphicon glyphicon-trash" />
-													<i className="fas fa-trash-alt" />
-												</button>
-											</p>
-										</td>
+										<td>Santo Domingo, 1457</td>
+										<td>Santiago</td>
 									</tr>
 								</tbody>
 							</table>
 							<div className="clearfix" />
-							<ul className="pagination pull-right">
-								<li className="disabled">
-									<a href="#">
-										<span className="glyphicon glyphicon-chevron-left" />
-									</a>
-								</li>
-								<li className="active">
-									<a href="#">1</a>
-								</li>
-								<li>
-									<a href="#">2</a>
-								</li>
-								<li>
-									<a href="#">3</a>
-								</li>
-								<li>
-									<a href="#">4</a>
-								</li>
-								<li>
-									<a href="#">5</a>
-								</li>
-								<li>
-									<a href="#">
-										<span className="glyphicon glyphicon-chevron-right" />
-									</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 				</div>
