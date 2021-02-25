@@ -11,10 +11,10 @@ export function Paypal() {
 						intent: "CAPTURE",
 						purchase_units: [
 							{
-								description: "Limpieza mantencion, 2D 2B",
+								description: "Limpieza mantencion, 3D 2B",
 								amount: {
 									currency_code: "USD",
-									value: 80
+									value: 50.49
 								}
 							}
 						]

@@ -91,7 +91,7 @@ export const HperfilTrabajador = () => {
 												role="tab"
 												aria-controls="profile-servicio"
 												aria-selected="false">
-												Servicios Realizados
+												Servicios Agendados
 											</a>
 										</li>
 										<li className="nav-item">
