@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Paypal } from "../component/Paypal";
 import "../../styles/reserva.scss";
+import { WindowScrollController } from "@fullcalendar/core";
 
 const Reserva = () => {
 	const [checkout, setCheckout] = useState(false);

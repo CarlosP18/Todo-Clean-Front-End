@@ -1,5 +1,5 @@
 import React from "react";
-import mainImg from "../../img/mainImg.jpeg";
+import mainImg from "../../img/mainImg.jpg";
 import logo from "../../img/logo.png";
 import InicioLabores from "../component/perfil-trabajador/iniciodelabores";
 import "../../styles/pricing.scss";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Paypal } from "../component/Paypal";
-import mainImg from "../../img/mainImg.jpeg";
+import mainImg from "../../img/mainImg.jpg";
 import logo from "../../img/logo.png";
 import icon1 from "../../img/icon1.png";
 

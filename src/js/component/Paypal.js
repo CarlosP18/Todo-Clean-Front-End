@@ -23,6 +23,7 @@ export function Paypal() {
 				onApprove: async (data, actions) => {
 					const order = await actions.order.capture();
 					console.log(order);
+					window.location.reload(true);
 				},
 				onError: err => {
 					console.log(err);

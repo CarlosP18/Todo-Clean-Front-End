@@ -18,8 +18,8 @@ import { PerfilTrabajor } from "./views/perfilTrabajador";
 import Ayuda from "./views/ayuda";
 import { Informe } from "./views/informe";
 import Form from "../js/views/form";
-import { Contrasena1 } from "./component/contraseña1";
-import { Contrasena2 } from "./component/contraseña2";
+import { Contrasena1 } from "./component/contrasena1";
+import { Contrasena2 } from "./component/contrasena2";
 
 //create your first component
 const Layout = () => {
