@@ -32,7 +32,6 @@ export const Contraseña1 = () => {
 
 	/* 	const { handleSubmit, handleChange, values, errors } = useForm(
 		result,
-
 		{
 			email: ""
 		},

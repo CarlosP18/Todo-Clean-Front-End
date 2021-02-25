@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Paypal } from "../component/Paypal";
 import "../../styles/reserva.scss";
+import { WindowScrollController } from "@fullcalendar/core";
 import { createCustomTheme } from "@mobiscroll/react";
 
 const Reserva = () => {
